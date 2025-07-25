@@ -20,8 +20,7 @@ function bind() {
     // 2. 검색창 부분을 수정하고, 'hearder-' 오타를 'header-'로 바로잡았습니다.
     topSection.innerHTML = `
         <div class="header-left">
-            <img src="assect/logo.PNG" alt="로고">
-            <h1>지역유치원</h1>
+            <img src="./header&footer/assect/logo.PNG" alt="로고">
         </div>
         <div class="header-right">
             <div class="search-container">
@@ -32,8 +31,8 @@ function bind() {
                     </svg>
                 </button>
             </div>
-            <a href="/login.html">로그인</a>
-            <a href="/contact">회원가입</a>
+            <a class="logina" href="./login.html">로그인</a>
+            <a class="logina" href="./signup.html">회원가입</a>
         </div>
     `;
     header.appendChild(topSection);
@@ -41,9 +40,11 @@ function bind() {
     const nav = document.createElement('nav');
     nav.innerHTML = `
     <div>
-        <a href="/">홈</a>
-        <a href="/about">소개</a>
-        <a href="/contact">연락처</a>
+        <a class="nav-button" href="./enroll.html"> 도우미 신청 </a>
+        <a class="nav-button" href="./register.html"> 도우미 등록 </a>
+        <a class="nav-button" href="./map.html">병원 찾기</a>
+        <a class="nav-button" href="/qualify.html">자격증 / 확인서 </a>
+        <a class="nav-button" href="./Q&A.html">고객 지원</a>
     </div>
     `;
     header.appendChild(nav);
