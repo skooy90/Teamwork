@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자격증 발급 신청내역 조회</title>
+    <link rel="stylesheet" href="qualify.css">
+    <link rel="stylesheet" href="sidebar-dropdown.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script src="sidebar.js"></script>
+</head>
+<body>
+
+<div id="header-container"></div>
+<main class="container">
+<aside class="sidebar">
+    <h2>자격증 / 확인서</h2>
+    <nav class="sidebar-nav">
+                <div class="dropdown">
+                    <h3>자격증 발급안내</h3>
+                    <ul>
+                        <li><a href="qualify_guide.html">자격증 발급</a></li>
+                        <li><a href="qualify_contact.html">자격증 발급 문의</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown active">
+                    <h3>자격증 발급</h3>
+                    <ul>
+                        <li><a href="qualify.html">자격증 발급 신청</a></li>
+                        <li class="current-page"><a href="qulify2.html">자격증 발급 신청내역 조회</a></li>
+                    </ul>
+                </div>
+                <!-- '확인서 발급' 드롭다운 하위 메뉴 추가 -->
+                <div class="dropdown">
+                    <h3>확인서 발급</h3>
+                    <ul>
+                        <li><a href="certificate_issue.html">확인서 발급 신청</a></li>
+                         <li><a href="certificate_history.html">확인서 발급 신청내역 조회</a></li>
+                    </ul>
+                </div>
+            </nav>
+</aside>
+
+<section class="content">
+    <div class="breadcrumb">
+        <span>▶ 자격증 / 확인서</span>
+        <span>&gt; 자격증 발급</span>
+        <span>&gt; 자격증 발급 신청내역 조회</span>
+    </div>
+
+    <h2>자격증 발급 신청내역 조회</h2>
+
+    <!-- 새로운 '신청내역 조회' 콘텐츠 -->
+    <div class="section-block guide-content-section">
+        <h3>신청내역</h3>
+        <div class="placeholder-content">
+            <p>아래에서 귀하의 자격증 발급 신청 내역을 확인하실 수 있습니다.</p>
+            <table class="application-history-table">
+                <thead>
+                    <tr>
+                        <th>신청번호</th>
+                        <th>자격증명</th>
+                        <th>신청일</th>
+                        <th>진행상태</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20240725-001</td>
+                        <td>케어메이트 1급</td>
+                        <td>2024-07-25</td>
+                        <td>심사 중</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>20240720-005</td>
+                        <td>케어메이트 2급</td>
+                        <td>2024-07-20</td>
+                        <td>발급 완료</td>
+                        <td>등기 발송</td>
+                    </tr>
+                    <tr>
+                        <td>20240715-010</td>
+                        <td>케어메이트 보조</td>
+                        <td>2024-07-15</td>
+                        <td>반려</td>
+                        <td>사진 규격 미달</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 20px; text-align: center; color: #666;">
+                * 자세한 내용은 해당 신청번호를 클릭하여 확인해주세요.
+            </p>
+        </div>
+    </div>
+    <!-- 여기까지 새로운 '신청내역 조회' 콘텐츠 -->
+
+</section>
+</main>
+
+<div id="footer-container"></div>
+</body>
+</html>

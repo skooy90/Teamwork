@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자격증 발급 문의</title>
+    <link rel="stylesheet" href="qualify.css"> <!-- 공통 스타일 -->
+    <link rel="stylesheet" href="sidebar-dropdown.css"> <!-- 사이드바 드롭다운 스타일 -->
+    <link rel="stylesheet" href="guide-buttons.css"> <!-- 상단 가이드 버튼 스타일 -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h2>자격증 / 확인서</h2>
+            <nav class="sidebar-nav">
+                <div class="dropdown active">
+                    <h3>자격증 발급안내</h3>
+                    <ul>
+                        <li><a href="qualify_guide.html">자격증 발급</a></li>
+                        <li class="current-page"><a href="qualify_contact.html">자격증 발급 문의</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>자격증 발급</h3>
+                    <ul>
+                        <li><a href="qualify.html">자격증 발급 신청</a></li>
+                        <li><a href="qulify2.html">자격증 발급 신청내역 조회</a></li>
+                    </ul>
+                </div>
+                <!-- '확인서 발급' 드롭다운 하위 메뉴 추가 -->
+                <div class="dropdown">
+                    <h3>확인서 발급</h3>
+                    <ul>
+                        <li><a href="certificate_issue.html">확인서 발급 신청</a></li>
+                         <li><a href="certificate_history.html">확인서 발급 신청내역 조회</a></li> 
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <div class="breadcrumb">
+                <span>▶ 자격증 / 확인서</span>
+                <span>&gt; 자격증 발급안내</span>
+                <span>&gt; 자격증 발급 문의</span>
+            </div>
+
+            <h2>자격증 발급 문의</h2>
+
+            <div class="guide-buttons-container">
+                <button class="guide-button" onclick="location.href='qualify_guide.html'">자격증 발급</button>
+                <button class="guide-button" onclick="location.href='qualify_contact.html'">자격증 발급 문의</button>
+            </div>
+
+            <div id="contact-info-section" class="section-block guide-content-section">
+                <h3>지부/지사 연락처</h3>
+                <div class="placeholder-content">
+                    <p>자격증 발급 관련 문의는 아래 각 지부/지사로 문의하시기 바랍니다.</p>
+                    <table class="contact-table">
+                        <thead>
+                            <tr>
+                                <th>지부/지사명</th>
+                                <th>전화번호</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>서울 본부</td>
+                                <td>02-1234-5678</td>
+                            </tr>
+                            <tr>
+                                <td>부산 지사</td>
+                                <td>051-9876-5432</td>
+                            </tr>
+                            <tr>
+                                <td>대구 지사</td>
+                                <td>053-1111-2222</td>
+                            </tr>
+                            <tr>
+                                <td>대전 충청 지부</td>
+                                <td>042-3333-4444</td>
+                            </tr>
+                            <tr>
+                                <td>광주 전라 지부</td>
+                                <td>062-5555-6666</td>
+                            </tr>
+                            <tr>
+                                <td>경기 남부 지사</td>
+                                <td>031-7777-8888</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="sidebar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const guideButtons = document.querySelectorAll('.guide-button');
+            const currentPath = window.location.pathname.split('/').pop();
+
+            guideButtons.forEach(button => {
+                // 모든 버튼에서 active-button 클래스 제거
+                button.classList.remove('active-button');
+
+                // 현재 페이지가 qualify_contact.html 이고, 버튼 텍스트가 '자격증 발급 문의'와 정확히 일치할 때 활성화
+                if (currentPath === 'qualify_contact.html' && button.textContent.trim() === '자격증 발급 문의') {
+                    button.classList.add('active-button');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

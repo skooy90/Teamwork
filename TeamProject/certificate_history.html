@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>확인서 발급 신청내역 조회</title>
+    <link rel="stylesheet" href="qualify.css"> <!-- 공통 스타일 -->
+    <link rel="stylesheet" href="sidebar-dropdown.css"> <!-- 사이드바 드롭다운 스타일 -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h2>자격증 / 확인서</h2>
+            <nav class="sidebar-nav">
+                <div class="dropdown">
+                    <h3>자격증 발급안내</h3>
+                    <ul>
+                        <li><a href="qualify_guide.html">자격증 발급</a></li>
+                        <li><a href="qualify_contact.html">자격증 발급 문의</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>자격증 발급</h3>
+                    <ul>
+                        <li><a href="qualify.html">자격증 발급 신청</a></li>
+                        <li><a href="qulify2.html">자격증 발급 신청내역 조회</a></li>
+                    </ul>
+                </div>
+                <!-- '확인서 발급' 드롭다운: 이 페이지에서 active -->
+                <div class="dropdown active">
+                    <h3>확인서 발급</h3>
+                    <ul>
+                        <li><a href="certificate_issue.html">확인서 발급 신청</a></li>
+                        <!-- 이 페이지(certificate_history.html)에서는 "확인서 발급 신청내역 조회"가 현재 페이지 -->
+                        <li class="current-page"><a href="certificate_history.html">확인서 발급 신청내역 조회</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <span>▶ 자격증 / 확인서</span>
+                <span>&gt; 확인서 발급</span>
+                <span>&gt; 확인서 발급 신청내역 조회</span>
+            </div>
+
+            <h2>확인서 발급 신청내역 조회</h2>
+
+            <!-- '신청내역' 콘텐츠 -->
+            <div class="section-block guide-content-section">
+                <h3>신청내역</h3>
+                <div class="placeholder-content">
+                    <p>아래에서 귀하의 확인서 발급 신청 내역을 확인하실 수 있습니다.</p>
+                    <table class="application-history-table">
+                        <thead>
+                            <tr>
+                                <th>신청번호</th>
+                                <th>확인서명</th> <!-- 자격증명 대신 확인서명으로 변경 -->
+                                <th>신청일</th>
+                                <th>진행상태</th>
+                                <th>비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>20240725-H01</td>
+                                <td>케어메이트 1급 확인서</td>
+                                <td>2024-07-25</td>
+                                <td>발급 대기</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>20240720-H02</td>
+                                <td>케어메이트 2급 확인서</td>
+                                <td>2024-07-20</td>
+                                <td>발급 완료</td>
+                                <td>우편 발송</td>
+                            </tr>
+                            <tr>
+                                <td>20240718-H03</td>
+                                <td>케어메이트 1급 확인서</td>
+                                <td>2024-07-18</td>
+                                <td>반려</td>
+                                <td>정보 불일치</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 20px; text-align: center; color: #666;">
+                        * 자세한 내용은 해당 신청번호를 클릭하여 확인해주세요.
+                    </p>
+                </div>
+            </div>
+            <!-- 여기까지 새로운 '신청내역' 콘텐츠 -->
+
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="sidebar.js"></script>
+    <script>
+        // 이 페이지에는 상단 가이드 버튼이 없으므로 해당 JS 로직은 필요 없습니다.
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>확인서 발급 신청</title>
+    <link rel="stylesheet" href="qualify.css"> <!-- 공통 스타일 -->
+    <link rel="stylesheet" href="sidebar-dropdown.css"> <!-- 사이드바 드롭다운 스타일 -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h2>자격증 / 확인서</h2>
+            <nav class="sidebar-nav">
+                <div class="dropdown">
+                    <h3>자격증 발급안내</h3>
+                    <ul>
+                        <li><a href="qualify_guide.html">자격증 발급</a></li>
+                        <li><a href="qualify_contact.html">자격증 발급 문의</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>자격증 발급</h3>
+                    <ul>
+                        <li><a href="qualify.html">자격증 발급 신청</a></li>
+                        <li><a href="qulify2.html">자격증 발급 신청내역 조회</a></li>
+                    </ul>
+                </div>
+                <!-- '확인서 발급' 드롭다운: 이 페이지에서 active -->
+                <div class="dropdown active">
+                    <h3>확인서 발급</h3>
+                    <ul>
+                        <!-- 이 페이지(certificate_issue.html)에서는 "확인서 발급 신청"이 현재 페이지 -->
+                        <li class="current-page"><a href="certificate_issue.html">확인서 발급 신청</a></li>
+                        <li><a href="certificate_history.html">확인서 발급 신청내역 조회</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <span>▶ 자격증 / 확인서</span>
+                <span>&gt; 확인서 발급</span>
+                <span>&gt; 확인서 발급 신청</span>
+            </div>
+
+            <h2>확인서 발급 신청</h2>
+
+            <!-- 확인서 종류 선택 섹션 -->
+            <div class="section-block certificate-form-section">
+                <h3>확인서 종류 선택</h3>
+                <p class="form-description">
+                    인터넷으로 증명서를 발급받는 과정에서 위·변조하는 행위는 형법 제225조(공문서 등의 위조·변조) 또는 제227조의2(공전자기록 위작·변작)의 규정에 따라 10년 이하의 징역을 받을 수 있습니다.
+                </p>
+                <form class="certificate-form">
+                    <div class="form-group">
+                        <label for="qualificationType">자격구분</label>
+                        <select id="qualificationType" name="qualificationType">
+                            <option value="">선택</option>
+                            <option value="type1">케어메이트 1급</option>
+                            <option value="type2">케어메이트 2급</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="examType">시험구분</label>
+                        <select id="examType" name="examType">
+                            <option value="">선택</option>
+                            <option value="exam1">필기</option>
+                            <option value="exam2">실기</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="certificateType">확인서종류</label>
+                        <select id="certificateType" name="certificateType">
+                            <option value="">선택</option>
+                            <option value="cert1">합격확인서</option>
+                            <option value="cert2">자격취득확인서</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="issueDate">발급기준</label>
+                        <input type="text" id="issueDate" name="issueDate" placeholder="예: 2023-01-01">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fee">수수료</label>
+                        <input type="text" id="fee" name="fee" value="0원" readonly>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="issuePurpose">발급용도</label>
+                        <textarea id="issuePurpose" name="issuePurpose" rows="5" placeholder="발급 용도를 입력해주세요."></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 출력 시 유의사항 섹션 -->
+            <div class="section-block notice-section">
+                <h3>출력 시 유의사항</h3>
+                <div class="placeholder-content">
+                    <ul>
+                        <li>확인서 출력 시 아래와 같은 현상이 발생하는 경우, 크롬 브라우저에서 확인서를 출력하시기 바랍니다.</li>
+                        <li>- 확인서 팝업(미리보기) 화면 하단에 열기 버튼이 나오지 않는 경우</li>
+                        <li>- '액세스가 거부되었습니다' 라는 경고 메시지가 보이는 경우</li>
+                        <li>- PDF 파일 뷰어 프로그램(어도비 아크로뱃 리더) 설치되었음에도 확인서 출력이 불가한 경우</li>
+                    </ul>
+                    <!-- <p class="guidance-text">
+                        <span style="color: #666;">ⓘ 청소년지도사, 청소년상담사, 공인중개사 등 공단에서 위탁받아 시행하는 전문자격취득확인서는 서비스 되지 않으며 시험접수확인서 및 합격확인서 등 기타 확인서는 공단에서 시행한 이후부터 서비스 가능합니다.</span>
+                    </p> -->
+                </div>
+            </div>
+
+            <div class="apply-button-container">
+                <button class="apply-certification-btn">신청</button>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="sidebar.js"></script>
+    <script>
+        // 이 페이지에는 상단 가이드 버튼이 없으므로 해당 JS 로직은 필요 없습니다.
+        // 만약 나중에 추가된다면 qualify_guide.html의 JS를 참고하여 구현하세요.
+    </script>
+
+</body>
+</html>

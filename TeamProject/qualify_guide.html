@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자격증 발급 안내</title>
+    <link rel="stylesheet" href="qualify.css"> <!-- 공통 스타일 -->
+    <link rel="stylesheet" href="sidebar-dropdown.css"> <!-- 사이드바 드롭다운 스타일 -->
+    <link rel="stylesheet" href="guide-buttons.css"> <!-- 상단 가이드 버튼 스타일 -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h2>자격증 / 확인서</h2>
+     <nav class="sidebar-nav">
+                <div class="dropdown active">
+                    <h3>자격증 발급안내</h3>
+                    <ul>
+                        <li class="current-page"><a href="qualify_guide.html">자격증 발급</a></li>
+                        <li><a href="qualify_contact.html">자격증 발급 문의</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>자격증 발급</h3>
+                    <ul>
+                        <li><a href="qualify.html">자격증 발급 신청</a></li>
+                        <li><a href="qulify2.html">자격증 발급 신청내역 조회</a></li>
+                    </ul>
+                </div>
+                <!-- '확인서 발급' 드롭다운 하위 메뉴 추가 -->
+                <div class="dropdown">
+                    <h3>확인서 발급</h3>
+                    <ul>
+                        <li><a href="certificate_issue.html">확인서 발급 신청</a></li>
+                           <li><a href="certificate_history.html">확인서 발급 신청내역 조회</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <div class="breadcrumb">
+                <span>▶ 자격증 / 확인서</span>
+                <span>&gt; 자격증 발급안내</span>
+                <span>&gt; 자격증 발급</span>
+            </div>
+
+            <h2>자격증 발급 안내</h2>
+
+            <div class="guide-buttons-container">
+                <button class="guide-button" onclick="location.href='qualify_guide.html'">자격증 발급</button>
+                <button class="guide-button" onclick="location.href='qualify_contact.html'">자격증 발급 문의</button>
+            </div>
+
+            <!-- 자격증 발급목적 섹션 -->
+            <div id="guide-section-1" class="section-block guide-content-section">
+                <h3>자격증 발급목적</h3>
+                <div class="placeholder-content">
+                   <br>
+                    <ul>
+                        <li>국가기술자격법 제13조 제1항의 규정에 의한 국가기술자격증을 발급하는 목적은 개인의 직무수행능력을 국가가 객관적으로 평가하여 그에 상응한 자격을 부여 공인하고 타인으로 하여금 믿고 활용하게 함으로써 국가기술자격 취득자의 권익보호 및 우대 등의 권리행사를 할 수 있도록 하는데 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 자격증 취득자 관리 섹션 -->
+            <div id="guide-section-2" class="section-block guide-content-section">
+                <h3>자격증 취득자 관리</h3>
+                <div class="placeholder-content">
+                    <br>
+                    <ul>
+                        <li>국가기술자격 취득자에 대하여는 자격증 발급신청서에 의하여 성명, 주민등록번호, 주소, 자격종목 및 등급, 취업처 명칭 및 취업처의 소재지 등을 전산 입력 작성하여 관리.
+                            19개 관련 주무부처에는 각종 개별사업에서 정한 인·허가 업무의 관리 및 자격취득자의 활용방안을 수립할 수 있도록 매분기 통보. 유관기관 및 기업체, 단체 등에는 자격취득자의 자격취득사항 조회, 확인 또는 관련 통계자료를 제공하여 기술인력자원을 효율적으로 활용하도록 지원.국가비상대비자원관리를 할 수 있도록 비상대비자원종목 취득자 현황 통보
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 자격증 발급대상 섹션 -->
+            <div id="guide-section-3" class="section-block guide-content-section">
+                <h3>자격증 발급대상</h3>
+                <div class="placeholder-content">
+                    <br>
+                    <ul>
+                        <li>·신규발급 : 국가기술자격검정 실기시험에 합격한 자에게 처음으로 자격증을 발급.<br>
+                            · 재발급 : 국가기술자격증을 발급 받은 자가 자격증을 분실하였거나 훼손하였을 경우 동일한 자격증을 다시 발급.<br>
+                            · 인정발급 : 국가기술자격법 제정 이전 다른 법령에 의한 기술자격취득자에게 국가기술자격법에 의한 기술자격취득자와 동일하게 인정하여 동종동등한 자격증을 발급.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 자격증 기재사항 변경신청 섹션 -->
+            <div id="guide-section-4" class="section-block guide-content-section">
+                <h3>자격증 기재사항 변경신청</h3>
+                <div class="placeholder-content">
+                    <br>
+                    <ul>
+                        <li>국가기술자격증의 기재내용 중 성명, 주민등록번호, 종목 및 등급 등이 변경되었을 경우 우리공단에 정정 신청하여야 하며. 국가기술자격 취득자가 취업하고 있는국가기술자격 취득자가 자격취득 사실확인이 필요할 경우 국가기술자격 취득사항확인서(한글, 영문)를 발급하고 있습니다.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 자격 취득사항 확인서 발급 섹션 -->
+            <div id="guide-section-5" class="section-block guide-content-section">
+                <h3>자격 취득사항 확인서 발급</h3>
+                <div class="placeholder-content">
+                    <br>
+                    <ul>
+                        <li>국가기술자격 취득자가 자격취득 사실확인이 필요할 경우 국가기술자격 취득사항확인서(한글, 영문)를 발급하고 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="sidebar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const guideButtons = document.querySelectorAll('.guide-button');
+            const currentPath = window.location.pathname.split('/').pop();
+
+            guideButtons.forEach(button => {
+                // 모든 버튼에서 active-button 클래스 제거
+                button.classList.remove('active-button');
+
+                // 현재 페이지가 qualify_guide.html 이고, 버튼 텍스트가 '자격증 발급'과 정확히 일치할 때 활성화
+                if (currentPath === 'qualify_guide.html' && button.textContent.trim() === '자격증 발급') {
+                    button.classList.add('active-button');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
