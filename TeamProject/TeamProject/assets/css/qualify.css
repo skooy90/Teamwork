@@ -1,0 +1,457 @@
+/* 기본 리셋 및 Body 스타일링 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* 메인 콘텐츠 레이아웃 */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* 사이드바 기본 스타일 (자세한 드롭다운 스타일은 sidebar.css로 분리) */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 콘텐츠 영역 공통 스타일 */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.breadcrumb {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.breadcrumb span {
+    margin-right: 5px;
+}
+
+.content h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+
+.placeholder-box { /* qualify.html 에 사용 */
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    height: 150px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+/* qualify2.html 에 사용되는 특정 스타일 */
+.security-notice-section {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    min-height: 500px;
+}
+
+.security-notice-section .warning-text {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.security-notice-section .image-upload-area {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.security-notice-section .image-placeholder {
+    text-align: center;
+    flex-basis: 150px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+}
+
+.security-notice-section .image-placeholder img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border: 1px solid #ddd;
+    background-color: #e0e0e0;
+}
+
+.security-notice-section .image-placeholder p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.security-notice-section .guidance-text {
+    font-size: 0.9em;
+    text-align: center;
+    color: #888;
+}
+
+.apply-button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.apply-certification-btn {
+    background-color: #666;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-certification-btn:hover {
+    background-color: #555;
+}
+
+/* qualify_guide.html 및 qualify_contact.html 에 사용되는 특정 스타일 */
+.guide-content-section {
+    background-color: #fdfdfd;
+    padding: 25px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.guide-content-section h3 {
+    font-size: 1.6em; /* qualify_guide의 h3는 더 커야 하므로 section-block h3와 분리 */
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.guide-content-section .placeholder-content {
+    line-height: 1.8;
+    color: #444;
+}
+
+.guide-content-section ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.guide-content-section li {
+    margin-bottom: 8px;
+}
+
+/* qualfiy_contact.html 에 사용되는 테이블 스타일 */
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+.contact-table th,
+.contact-table td {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.contact-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.contact-table tbody tr:hover {
+    background-color: #eaeaea;
+}
+
+/* ... 기존 qualify.css 코드 (데스크톱 기본 스타일) ... */
+
+/* ... 기존 qualify.css 코드 ... */
+
+/* 신청내역 테이블 스타일 (새로 추가) */
+.application-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+.application-history-table th,
+.application-history-table td {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    text-align: center; /* 테이블 내용 가운데 정렬 */
+}
+
+.application-history-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+.application-history-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.application-history-table tbody tr:hover {
+    background-color: #eaeaea;
+}
+
+/* ============================================== */
+/* 반응형 디자인을 위한 미디어 쿼리 시작 */
+/* ============================================== */
+
+/* 태블릿 및 작은 데스크톱 화면 (최대 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* 사이드바와 콘텐츠를 세로로 쌓음 */
+        margin: 10px; /* 좌우 여백 줄이기 */
+        box-shadow: none; /* 모바일에서는 그림자 제거하여 깔끔하게 */
+        border-radius: 0; /* 모바일에서는 둥근 모서리 제거 */
+    }
+
+    .sidebar {
+        width: 100%; /* 사이드바를 전체 너비로 */
+        padding: 15px; /* 패딩 조정 */
+        border-right: none; /* 오른쪽 테두리 제거 */
+        border-bottom: 1px solid #eee; /* 하단에 구분선 추가 */
+    }
+
+    .sidebar h2 {
+        text-align: center; /* 사이드바 제목 가운데 정렬 */
+    }
+
+    .sidebar-nav .dropdown {
+        margin-bottom: 5px; /* 드롭다운 간격 줄이기 */
+    }
+
+    .sidebar-nav .dropdown h3 {
+        font-size: 1.1em; /* 드롭다운 제목 폰트 크기 조정 */
+        padding: 12px 15px;
+    }
+
+    .sidebar-nav .dropdown ul {
+        max-height: 200px; /* 모바일에서 드롭다운 메뉴 높이 조정 (필요에 따라 더 크게) */
+    }
+
+    .sidebar-nav .dropdown li {
+        padding: 10px 15px; /* 하위 메뉴 패딩 조정 */
+    }
+
+    .content {
+        padding: 15px; /* 콘텐츠 영역 패딩 조정 */
+    }
+
+    .content h2 {
+        font-size: 1.6em; /* 콘텐츠 제목 폰트 크기 조정 */
+        text-align: center; /* 콘텐츠 제목 가운데 정렬 */
+    }
+
+    .section-block {
+        min-height: auto; /* 모바일에서는 최소 높이 제한 해제 (콘텐츠에 따라 유동적으로) */
+        padding: 15px; /* 섹션 블록 패딩 조정 */
+    }
+
+    .placeholder-box {
+        height: 120px; /* 플레이스홀더 박스 높이 조정 */
+        font-size: 1em;
+    }
+
+    .security-notice-section {
+        min-height: auto; /* 모바일에서는 최소 높이 제한 해제 */
+    }
+
+    .security-notice-section .image-upload-area {
+        flex-direction: column; /* 이미지들을 세로로 쌓음 */
+        align-items: center; /* 가운데 정렬 */
+    }
+
+    .security-notice-section .image-placeholder {
+        flex-basis: auto; /* 너비 자동 조절 */
+        width: 80%; /* 이미지 박스 너비 조정 */
+        max-width: 200px; /* 최대 너비 제한 */
+    }
+
+    .contact-table {
+        font-size: 0.9em; /* 테이블 폰트 크기 조정 */
+    }
+
+    .contact-table th,
+    .contact-table td {
+        padding: 8px 10px; /* 테이블 셀 패딩 조정 */
+    }
+}
+
+/* 모바일 화면 (최대 480px) - 더 작은 화면에 대한 추가 조정 */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* 기본 폰트 크기 줄이기 */
+    }
+
+    .sidebar h2 {
+        font-size: 1.3em;
+    }
+
+    .sidebar-nav .dropdown h3 {
+        font-size: 1em;
+    }
+
+    .content h2 {
+        font-size: 1.4em;
+    }
+
+    .guide-buttons-container {
+        flex-direction: column; /* 버튼들을 세로로 쌓음 */
+        padding: 10px;
+    }
+
+    .guide-button {
+        width: 100%; /* 버튼 너비를 전체로 */
+        margin-bottom: 10px; /* 버튼 사이에 간격 추가 */
+        border-radius: 5px !important; /* 각 버튼의 모서리를 개별적으로 둥글게 */
+    }
+
+    /* 세로로 쌓일 때 각 버튼의 둥근 모서리 재설정 */
+    .guide-button:first-child,
+    .guide-button:last-child {
+        border-radius: 5px; /* 모든 모서리 둥글게 */
+    }
+
+    .guide-button:last-child {
+        margin-bottom: 0; /* 마지막 버튼 하단 간격 제거 */
+    }
+}
+
+/* ... 기존 qualify.css 코드 ... */
+
+/* 확인서 발급 신청 폼 섹션 스타일 */
+.certificate-form-section {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.certificate-form-section .form-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.certificate-form {
+    display: flex;
+    flex-wrap: wrap; /* 폼 그룹이 줄바꿈되도록 */
+    gap: 20px; /* 폼 그룹 사이 간격 */
+}
+
+.form-group {
+    flex: 1 1 calc(50% - 20px); /* 기본적으로 두 열로 배치 (gap 고려) */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px; /* 각 폼 그룹 하단 여백 */
+}
+
+.form-group.full-width {
+    flex: 1 1 100%; /* 전체 너비를 차지하는 폼 그룹 */
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.form-group select,
+.form-group input[type="text"],
+.form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%; /* 부모 flex 아이템 너비에 맞춤 */
+    box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 */
+}
+
+.form-group select {
+    appearance: none; /* 기본 select 화살표 제거 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.4H18.4c-6.1%200-11.6%203.5-13.2%208.4-1.6%204.9-0.2%2010.5%203.6%2014.3l128%20128c4.8%204.8%2012.5%204.8%2017.3%200l128-128c3.8-3.8%205.2-9.4%203.6-14.3z%22%2F%3E%3C%2Fsvg%3E'); /* 커스텀 화살표 */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px; /* 화살표 공간 확보 */
+}
+
+.form-group textarea {
+    resize: vertical; /* 세로 크기만 조절 가능 */
+}
+
+/* 출력 시 유의사항 섹션 스타일 (기존 guide-content-section 재활용) */
+.notice-section {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.notice-section h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notice-section ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.notice-section li {
+    margin-bottom: 8px;
+}

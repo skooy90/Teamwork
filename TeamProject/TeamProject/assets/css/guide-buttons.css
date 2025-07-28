@@ -1,0 +1,63 @@
+/* guide-buttons.css */
+
+/* 자격증 발급 안내 페이지의 버튼/링크 영역 스타일 */
+.guide-buttons-container {
+    display: flex;
+    justify-content: flex-start; /* 버튼들을 왼쪽으로 정렬하여 간격 없앰 */
+    margin-bottom: 30px;
+    padding: 0; /* 컨테이너의 상하 패딩 제거 */
+    background-color: #f8f8f8; /* 배경색 유지 */
+    border-radius: 8px; /* 컨테이너의 둥근 모서리 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden; /* 컨테이너의 둥근 모서리 밖으로 버튼이 튀어나오지 않도록 */
+}
+
+.guide-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* 색상 전환도 부드럽게 */
+    width: 50%; /* 각 버튼이 컨테이너의 절반 너비를 차지하도록 */
+    height: 65px;   /* 버튼 높이 유지 */
+    text-align: center;
+    box-sizing: border-box; /* 패딩과 보더가 너비/높이에 포함되도록 */
+    /* 개별 border-radius는 first-child/last-child에서 설정하므로 여기서는 제거 */
+    border-radius: 0; /* 기본적으로 각지게 설정 */
+}
+
+/* 첫 번째 버튼 (왼쪽)의 모서리만 둥글게 */
+.guide-button:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    /* 오른쪽 모서리는 각지게 */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* 마지막 버튼 (오른쪽)의 모서리만 둥글게 */
+.guide-button:last-child {
+    /* 왼쪽 모서리는 각지게 */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* 활성화된 버튼 스타일 (스토리보드의 어두운 회색) */
+.guide-button.active-button {
+    background-color: #666; /* 활성 버튼 배경색 (어두운 회색) */
+    color: white; /* 활성 버튼 텍스트 색상 */
+    cursor: default; /* 활성화된 버튼은 클릭 불가 표시 */
+}
+
+/* 활성화되지 않은 버튼의 기본 및 호버 스타일 (밝은 회색) */
+.guide-button:not(.active-button) {
+    background-color: #e0e0e0; /* 비활성 버튼의 기본 배경색 (밝은 회색) */
+    color: #333; /* 비활성 버튼의 텍스트 색상 */
+}
+
+.guide-button:not(.active-button):hover {
+    background-color: #d0d0d0; /* 비활성 버튼 호버 시 약간 더 어두운 회색 */
+    color: #333; /* 텍스트 색상 유지 */
+}

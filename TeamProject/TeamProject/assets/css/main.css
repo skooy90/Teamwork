@@ -1,0 +1,272 @@
+/* main.css */
+
+/* 공통 스타일 및 레이아웃 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px; /* 콘텐츠 최대 너비 설정 */
+    margin: 20px auto; /* 중앙 정렬 및 상하 여백 */
+    padding: 0 20px;
+}
+
+/* 메인 비주얼 섹션 (캐러셀) */
+.main-visual-section {
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* 이미지가 밖으로 나가지 않도록 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ca-container {
+    position: relative;
+    width: 100%;
+    /* height: 50vh; */
+    object-fit: contain;
+
+    overflow: hidden;
+}
+
+.ca-image-wrapper {
+    display: flex; /* 이미지를 가로로 정렬 */
+    transition: transform 0.5s ease-in-out; /* 슬라이드 애니메이션 */
+
+}
+
+.ca-image {
+    width: 100%; /* 각 이미지가 컨테이너 너비를 채우도록 */
+    height: 50vh;
+    display: none; /* 기본적으로 숨김 */
+    flex-shrink: 0; /* 이미지 크기 축소 방지 */
+}
+
+.ca-image.active {
+    display: block; /* 활성 이미지 표시 */
+}
+
+.ca-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.ca-arrow:hover {
+    opacity: 1;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.ca-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+/* 퀵 링크 섹션 */
+.quick-links-section {
+    display: flex;
+    justify-content: space-between; /* 버튼들을 균등하게 배치 */
+    gap: 15px; /* 버튼 사이 간격 */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+}
+
+.quick-link-button {
+    flex: 1; /* flex item이 공간을 균등하게 차지하도록 */
+    min-width: 180px; /* 최소 너비 설정 */
+    padding: 15px 20px;
+    background :linear-gradient(145deg, rgb(240, 197, 88), rgb(236, 209, 35));
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* 호버를 적용되는 여유시간 */
+    font-weight: bold;
+}
+
+.quick-link-button:hover {
+    background : linear-gradient(145deg, rgb(240, 197, 88), rgb(236, 209, 35));
+}
+
+/* 콘텐츠 디스플레이 섹션 (프로모션 이미지 + 공지사항) */
+.content-display-section {
+    margin-bottom: 30px;
+}
+
+.content-display-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.promo-notice-container {
+    display: flex;
+    gap: 30px; /* 두 영역 사이 간격 */
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+    
+}
+
+.promotional-image-area {
+    flex: 1; /*더 많은 공간을 차지하도록*/
+    min-width: 200px; /* 최소 너비 설정 */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 25vh;
+}
+
+.promotional-image-area img {
+    width: 100%;
+    height: 30vh;
+    display: block;
+}
+
+.notice-board-area {
+    flex: 1; /* 남은 공간을 차지하도록 */
+    min-width: 250px; /* 최소 너비 설정 */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.notice-board-area h3 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.notice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* 남은 공간을 채우도록 */
+}
+
+.notice-list li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notice-list li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    white-space: nowrap; /* 한 줄로 표시 */
+    overflow: hidden; /* 넘치는 내용 숨김 */
+    text-overflow: ellipsis; /* 넘치는 내용 ...으로 표시 */
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.notice-list li span {
+    color: #999;
+    font-size: 13px;
+    flex-shrink: 0; /* 날짜가 줄어들지 않도록 */
+}
+
+.notice-list li a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.view-more-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-button:hover {
+    background-color: #d0d0d0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+        img {
+        max-width: 100%;
+        height: auto;
+        display: block; /* 이미지 하단 여백 제거 */
+    }
+    main{
+        padding: 0;
+    }
+
+    .quick-links-section {
+        flex-direction: column; /* 세로로 정렬 */
+        align-items: stretch; /* 전체 너비 차지 */
+    }
+    
+    .quick-link-button {
+        min-width: unset; /* 최소 너비 제한 해제 */
+    }
+    
+    .promo-notice-container {
+        flex-direction: column; /* 세로로 정렬 */
+    }
+    .content-display-section{
+        flex-direction: column; /* 세로로 정렬 */
+        align-items: stretch; /* 전체 너비 차지 */
+        width: 100%;
+    }
+
+}
