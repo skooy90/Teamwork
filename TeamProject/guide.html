@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객 지원 - 이용 안내</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="qualify.css"> <!-- 기본 레이아웃 및 사이드바 스타일 -->
+    <link rel="stylesheet" href="sidebar-dropdown.css"> <!-- 사이드바 드롭다운 스타일 -->
+    <link rel="stylesheet" href="guide.css"> <!-- 이용 안내 페이지 전용 스타일 -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script src="sidebar.js"></script> <!-- 사이드바 드롭다운 기능 -->
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h2>고객 지원</h2>
+            <nav class="sidebar-nav">
+                <div class="dropdown">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li><a href="notice.html">공지 게시판</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>자주하는 질문</h3>
+                    <ul>
+                        <li><a href="Q&A.html">Q&A</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown active">
+                    <h3>사이트 이용 안내</h3>
+                    <ul>
+                        <li class="current-page"><a href="guide.html">이용 안내 </a></li> <!-- 이용 안내 활성화 -->
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="content">
+            <div class="breadcrumb">
+                <span>▶ 고객 지원</span>
+                <span>&gt; 사이트 이용 안내</span>
+                <span>&gt; 이용 안내</span>
+            </div>
+
+            <h2>이용 안내</h2>
+
+            <div class="guide-section">
+                <h3>1. 전화번호</h3>
+                <p>1234-5678</p>
+            </div>
+
+            <div class="guide-section">
+                <h3>2. 주소</h3>
+                <p>충청남도 천안시 동남구 대흥로 215 7층</p>
+            </div>
+
+            <div class="guide-section">
+                <h3>3. 운영시간</h3>
+                <ul>
+                    <li>평일: 오전 09시 ~ 오후 10시</li>
+                    <li>토요일: 오전 09시 ~ 오후 6시</li>
+                    <li>공휴일 및 주말은 운영하지 않습니다.</li>
+                </ul>
+            </div>
+
+            <div class="guide-section">
+                <h3>4. 이메일</h3>
+                <p>support@caremate.com </p>
+            </div>
+
+            <div class="guide-section">
+                <h3>5. 팩스번호</h3>
+                <p>041-123-4567</p>
+            </div>
+
+            <div class="guide-section">
+                <h3>6. 사업자 등록번호</h3>
+                <p>123-45-67890 </p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+</html>
