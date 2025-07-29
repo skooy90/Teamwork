@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="detailPageTitle">공지사항 상세</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="qualify.css"> <!-- 기본 레이아웃 및 사이드바 스타일 -->
+    <link rel="stylesheet" href="sidebar-dropdown.css"> <!-- 사이드바 드롭다운 스타일 -->
+    <link rel="stylesheet" href="notice_detail.css"> <!-- 공지사항 상세 페이지 전용 스타일 -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script src="sidebar.js"></script> <!-- 사이드바 드롭다운 기능 -->
+    <script src="notice_detail.js"></script> 
+
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h2>고객 지원</h2>
+            <nav class="sidebar-nav">
+                <div class="dropdown active">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li class="current-page"><a href="Q&A.html">공지 게시판</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>자주하는 질문</h3>
+                    <ul>
+                        <li><a href="#">Q&A</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>사이트 이용 안내</h3>
+                    <ul>
+                        <li><a href="#">이용 안내 </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="content">
+            <div class="breadcrumb" id="detailBreadcrumb">
+                <span>▶ 고객 지원</span>
+                <span>&gt; 공지사항</span>
+                <span>&gt; <a href="Q&A.html">공지 게시판</a></span>
+                <span>&gt; <span id="currentNoticeTitle"></span></span>
+            </div>
+
+            <h2 id="noticeDetailTitle"></h2>
+
+            <div class="notice-meta">
+                <span id="noticeDetailDepartment"></span>
+                <span class="separator">|</span>
+                <span id="noticeDetailDate"></span>
+                <span class="separator">|</span>
+                <span id="noticeDetailViews">조회수: </span>
+            </div>
+
+            <div class="notice-content-area">
+                <p id="noticeDetailContent"></p>
+                <div id="noticeDetailAttachment" class="attachment-info">
+                    <!-- 첨부파일이 있을 경우 여기에 표시 -->
+                </div>
+            </div>
+
+            <div class="notice-actions">
+                <button class="list-button" onclick="location.href='notice.html'">목록</button>
+            </div>
+        </div>
+    </main>
+    <div id="footer-container"></div>
+</body>
+</html>
