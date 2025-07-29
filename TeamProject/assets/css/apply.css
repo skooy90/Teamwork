@@ -1,31 +1,19 @@
 /* apply.css */
 
-/* 기본 리셋 및 Body 스타일링 (apply.html 전용) */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* apply.html 메인 콘텐츠 영역 */
-.main-content-apply {
-    max-width: 1200px; /* qualify.css의 .container와 유사한 최대 너비 */
-    margin: 20px auto; /* 중앙 정렬 */
+/* 메인 콘텐츠 영역 (qualify.css의 .content와 유사) */
+.content {
+    padding: 20px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    padding: 20px; /* 내부 패딩 */
-    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.main-content-apply h2 {
-    font-size: 1.8em;
+.content h2 {
+    font-size: 2em;
     color: #333;
     margin-bottom: 20px;
-    border-bottom: 2px solid #eee;
     padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
 }
 
 .breadcrumb {
@@ -38,27 +26,65 @@ body {
     margin-right: 5px;
 }
 
-/* 케어메이트 카테고리 컨테이너 */
-.caremate-categories {
+.breadcrumb a {
+    color: #777;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* 탭 버튼 컨테이너 (이미지처럼 보이는 탭) */
+.tabs-container {
     display: flex;
-    gap: 20px; /* 케어메이트 1급/2급 박스 사이 간격 */
+    /* 탭 버튼 사이 간격 */
     margin-bottom: 30px;
+    justify-content: center; /* 가운데 정렬 */
     flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
 }
 
-/* 케어메이트 각 등급 박스 */
-.caremate-box {
+/* 탭 버튼 스타일 (이미지처럼 보이도록) */
+.tab-button {
     flex: 1; /* 남은 공간을 균등하게 차지 */
-    min-width: 300px; /* 최소 너비 설정 (모바일에서 줄바꿈 위함) */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    padding: 20px;
-    box-sizing: border-box;
+    max-width: 250px; /* 최대 너비 설정 */
+    min-width: 180px; /* 최소 너비 설정 */
+    padding: 15px 20px;
+    background-color: #f0f0f0; /* 기본 배경색 */
+    color: #555;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 8px; /* 둥근 모서리 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 그림자 */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.caremate-box h3 {
+.tab-button.active {
+    background-color: #6c757d; /* 활성화된 탭 배경색 (회색) */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* 활성화 시 그림자 강조 */
+    transform: translateY(-3px); /* 활성화 시 약간 위로 */
+}
+
+.tab-button:hover:not(.active) {
+    background-color: #e9e9e9;
+    transform: translateY(-2px); /* 호버 시 약간 위로 */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+}
+
+/* 케어메이트 섹션 컨테이너 (1급/2급 각각) */
+.caremate-section {
+    /* JavaScript로 display 속성 제어 */
+    /* display: block; 또는 display: none; */
+    margin-bottom: 30px; /* 섹션 간 간격 */
+}
+
+.caremate-section h3 {
     font-size: 1.5em;
     color: #333;
     text-align: center;
@@ -99,19 +125,19 @@ body {
     width: 100px; /* 이미지 플레이스홀더 크기 증가 */
     height: 100px; /* 이미지 플레이스홀더 크기 증가 */
     background-color: #e0e0e0; /* 회색 박스 */
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 50%; /* 원형 이미지 */
     margin-bottom: 8px;
     display: flex; /* 이미지를 중앙에 배치하기 위함 */
     justify-content: center;
     align-items: center;
     overflow: hidden; /* 이미지가 넘치지 않도록 */
+    border: 2px solid #ddd; /* 테두리 추가 */
 }
 
 .info-item .info-placeholder img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* 이미지가 잘리지 않고 비율 유지하도록 */
+    width: 100%; /* 이미지가 원형 플레이스홀더를 채우도록 */
+    height: 100%;
+    object-fit: cover; /* 이미지가 잘리지 않고 비율 유지하도록 */
 }
 
 .info-item p {
@@ -249,26 +275,33 @@ body {
 /* 반응형 조정 */
 /* ============================================== */
 @media (max-width: 768px) {
-    .main-content-apply {
+    .content { /* .main-content-apply 대신 .content 사용 */
         margin: 10px;
         padding: 15px;
         border-radius: 0;
         box-shadow: none;
     }
-    .main-content-apply h2 {
+    .content h2 {
         font-size: 1.6em;
         text-align: center;
     }
-    .caremate-categories {
-        flex-direction: column; /* 세로로 쌓이도록 */
+    .tabs-container {
+        flex-direction: column; /* 모바일에서 탭 버튼 세로로 쌓이도록 */
         gap: 15px;
     }
-    .caremate-box {
+    .tab-button {
+        max-width: none; /* 모바일에서 최대 너비 해제 */
+        min-width: auto; /* 모바일에서 최소 너비 해제 */
+        width: 100%; /* 전체 너비 차지 */
+        padding: 12px 15px;
+        font-size: 1.1em;
+    }
+    .caremate-section { /* .caremate-box 대신 .caremate-section 사용 */
         min-width: auto; /* 최소 너비 해제 */
         width: 100%; /* 전체 너비 차지 */
         padding: 15px;
     }
-    .caremate-box h3 {
+    .caremate-section h3 {
         font-size: 1.3em;
     }
     .info-grid {
