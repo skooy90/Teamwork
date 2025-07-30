@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객 지원 - FAQ</title>
+    <link rel="stylesheet" href="../../header&footer/header.css">
+    <link rel="stylesheet" href="../../header&footer/footer.css">
+    <link rel="stylesheet" href="../../assets/css/qualify.css"> <!-- 기본 레이아웃 및 사이드바 스타일 -->
+    <link rel="stylesheet" href="../../assets/css/sidebar-dropdown.css"> <!-- 사이드바 드롭다운 스타일 -->
+    <link rel="stylesheet" href="../../assets/css/FAQ.css"> <!-- FAQ 페이지 전용 스타일 (qna_new.css와 동일) -->
+    <script src="../../header&footer/header.js"></script>
+    <script src="../../header&footer/footer.js"></script>
+    <script src="../../js/assets/sidebar.js"></script> <!-- 사이드바 드롭다운 기능 -->
+    <script src="../../js/assets/FAQ.js"></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h2>고객 지원</h2>
+            <nav class="sidebar-nav">
+                <div class="dropdown">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li><a href="notice.html">공지 게시판</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown active">
+                    <h3>자주하는 질문</h3>
+                    <ul>
+                        <li><a href="Q&A.html">Q&A</a></li>
+                        <li class="current-page"><a href="FAQ.html">FAQ</a></li> <!-- FAQ 활성화 -->
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>사이트 이용 안내</h3>
+                    <ul>
+                 <li><a href="guide.html">이용 안내 </a></li> <!-- guide.html로 연결 -->
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="content">
+            <div class="breadcrumb">
+                <span>▶ 고객 지원</span>
+                <span>&gt; 자주하는 질문</span>
+                <span>&gt; FAQ</span>
+            </div>
+
+            <h2>자주하는 질문</h2>
+
+            <div class="search-filter-area">
+                <div class="search-conditions">
+                    <label for="searchCondition">빠른 검색으로 질문과 답변을 찾아보세요.</label>
+                    <select id="searchCondition">
+                        <option value="all">전체</option>
+                        <option value="category1">서비스 이용</option>
+                        <option value="category2">결제/환불</option>
+                        <option value="category3">회원 정보</option>
+                        <option value="category4">기술 지원</option>
+                    </select>
+                </div>
+                <div class="search-input-group">
+                    <input type="text" placeholder="검색어를 입력하세요" class="search-input">
+                    <button class="search-button">검색</button>
+                </div>
+            </div>
+
+            <div class="qna-list" id="qnaList">
+                <!-- FAQ 항목들이 JavaScript로 채워질 부분 -->
+            </div>
+
+            <div class="pagination" id="paginationControls">
+                <!-- JavaScript로 페이지 링크가 채워질 부분 -->
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+</body>
+</html>

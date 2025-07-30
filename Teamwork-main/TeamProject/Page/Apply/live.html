@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 모니터링</title>
+    <link rel="stylesheet" href="../..//header&footer/header.css">
+    <link rel="stylesheet" href="../..//header&footer/footer.css">
+    <link rel="stylesheet" href="../../assets/css/live.css">
+    <script src="../..//header&footer/header.js"></script>
+    <script src="../..//header&footer/footer.js"></script>
+    <script src="../../assets/js/live.js"></script>
+</head>
+
+<body>
+    <div id="header-container"></div>
+    
+    <main class="live-container">
+        <div class="main-section">
+            <!-- 도우미 정보 섹션 -->
+            <div class="section helper-info-section">
+                <h2>도우미 정보</h2>
+                <div class="section-content">
+                    <div class="helper-profile">
+                        <div class="profile-image">
+                            <img src="../../assets/img/샘플1.jfif" alt="도우미 프로필" class="helper-photo">
+                            <div class="status-indicator online"></div>
+                        </div>
+                        <div class="helper-details">
+                            <h3>김케어</h3>
+                            <p class="helper-title">케어메이트 1급</p>
+                            <p class="helper-experience">경력 5년</p>
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="helper-status">
+                        <div class="status-item">
+                            <span class="status-label">현재 상태:</span>
+                            <span class="status-value active">활동 중</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">서비스 시간:</span>
+                            <span class="status-value">09:00 - 18:00</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">전화번호:</span>
+                            <span class="status-value">010-1234-5678</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="action-button call-button">
+                    <i class="phone-icon">📞</i>
+                    전화 걸기
+                </button>
+                <button class="action-button chat-button">
+                    <i class="chat-icon">💬</i>
+                    채팅하기
+                </button>
+            </div>
+
+            <!-- 실시간 화면 섹션 -->
+            <div class="section live-screen-section">
+                <h2>실시간 화면</h2>
+                <div class="section-content">
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <div class="video-overlay">
+                                <div class="video-controls">
+                                    <button class="control-btn play-btn">▶</button>
+                                    <button class="control-btn pause-btn">⏸</button>
+                                    <button class="control-btn fullscreen-btn">⛶</button>
+                                </div>
+                                <div class="video-info">
+                                    <span class="live-indicator">● LIVE</span>
+                                    <span class="timestamp">14:30:25</span>
+                                </div>
+                            </div>
+                            <div class="video-feed">
+                                <img src="../../assets/img/라이브 화면.jpg" alt="실시간 화면" class="live-video">
+                            </div>
+                        </div>
+                        <button class="close-expand-btn video-close-btn">✕</button>
+                    </div>
+                </div>
+                <button class="action-button expand-button">
+                    <i class="expand-icon">🔍</i>
+                    화면 확대해서 보기
+                </button>
+            </div>
+
+            <!-- 실시간 위치 섹션 -->
+            <div class="section live-location-section">
+                <h2>실시간 위치</h2>
+                <div class="section-content">
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <div class="map-overlay">
+                                <div class="location-info">
+                                    <div class="current-location">
+                                        <span class="location-icon">📍</span>
+                                        <span class="location-text">충청남도 천안시 동남구 대흥동 134</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="map-controls">
+                                    <button class="map-control-btn zoom-in">+</button>
+                                    <button class="map-control-btn zoom-out">-</button>
+                                    <button class="map-control-btn center">⌖</button>
+                                </div>
+                            </div>
+                            <div class="map-view">
+                                <img src="../../assets/img/지도.jpg" alt="실시간 위치 지도" class="location-map">
+                                <div class="location-marker">
+                                    <div class="marker-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="close-expand-btn map-close-btn">✕</button>
+                    </div>
+                </div>
+                <button class="action-button map-expand-button">
+                    <i class="map-icon">🗺️</i>
+                    지도 확대해서 보기
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+
+</html>

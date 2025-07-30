@@ -1,0 +1,85 @@
+/* sidebar-dropdown.css */
+
+/* 드롭다운 메뉴 스타일 */
+.sidebar-nav .dropdown {
+    margin-bottom: 10px;
+    border: 1px solid #ddd; /* 드롭다운 박스 전체 테두리 */
+}
+
+.sidebar-nav .dropdown h3 {
+    background-color: #eee;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0;
+    font-size: 1em;
+    display: flex; /* 화살표 아이콘 정렬을 위해 flex 사용 */
+    justify-content: space-between; /* 텍스트와 화살표를 양쪽 끝으로 */
+    align-items: center;
+    position: relative; /* 화살표를 위한 기준점 */
+}
+
+/* 드롭다운 제목 옆에 화살표 아이콘 추가 (CSS 가상 요소를 사용) */
+.sidebar-nav .dropdown h3::after {
+    content: '▼'; /* 아래쪽 화살표 */
+    font-size: 0.8em;
+    transition: transform 0.3s ease; /* 회전 애니메이션 */
+}
+
+/* 드롭다운이 활성(열림) 상태일 때 화살표 위로 회전 */
+.sidebar-nav .dropdown.active h3::after {
+    transform: rotate(180deg); /* 180도 회전하여 위쪽 화살표처럼 보이게 */
+}
+
+/* 드롭다운이 활성(열림) 상태일 때 제목 배경색 변경 */
+.sidebar-nav .dropdown.active h3 {
+    background-color: #ddd;
+}
+
+/* 하위 메뉴 (ul) 기본적으로 숨김 */
+.sidebar-nav .dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fdfdfd;
+    overflow: hidden; /* 애니메이션을 위해 overflow hidden */
+    max-height: 0; /* 기본적으로 높이를 0으로 설정하여 숨김 */
+    transition: max-height 0.6s ease-out; /* 높이 애니메이션 시간을 늘려 자연스럽게 */
+    border-top: none; /* 상단 테두리는 없앰 (h3에 이미 테두리 있음) */
+}
+
+/* 활성(active) 드롭다운일 때 하위 메뉴 보이기 */
+.sidebar-nav .dropdown.active ul {
+    max-height: 100px; /* 충분히 큰 값으로 설정하여 내용이 모두 보이도록 (내용 길이에 따라 조절) */
+    border-top: 1px solid #ddd; /* 하위 메뉴가 보일 때만 상단 테두리 추가 */
+}
+
+.sidebar-nav .dropdown li {
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-nav .dropdown li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-nav .dropdown a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+}
+
+.sidebar-nav .dropdown a:hover {
+    color: #000;
+}
+
+/* 사이드바 현재 페이지 스타일 */
+.sidebar-nav .dropdown li.current-page a {
+    font-weight: bold;
+    color: #000;
+    background-color: #f0f0f0; /* 현재 페이지 배경색 */
+    border-left: 3px solid #666; /* 왼쪽 강조선 */
+    padding-left: 12px; /* 강조선 공간 확보 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
