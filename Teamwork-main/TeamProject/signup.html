@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - 약관 동의</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="signup.css"> <!-- 회원가입 페이지 전용 스타일 -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script src="signup.js"></script>
+</head>
+<body>
+    
+    <div id="header-container"></div>
+
+    <main class="signup-container">
+        <div class="signup-box">
+            <h2>약관동의</h2>
+            <p class="agreement-instruction">가입약관을 확인해주세요.</p>
+
+            <div class="agreement-list">
+                <div class="agreement-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="required-agreement">
+                        <span class="checkmark"></span>
+                        <span class="agreement-text">(필수) CM.Net 서비스 이용약관</span>
+                    </label>
+                    <button type="button" class="view-details-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="agreement-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="required-agreement">
+                        <span class="checkmark"></span>
+                        <span class="agreement-text">(필수) 개인정보 수집 및 이용 동의</span>
+                    </label>
+                    <button type="button" class="view-details-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="agreement-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="required-agreement">
+                        <span class="checkmark"></span>
+                        <span class="agreement-text">(필수) 고유식별정보 수집 및 이용 동의</span>
+                    </label>
+                    <button type="button" class="view-details-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="agreement-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="optional-agreement">
+                        <span class="checkmark"></span>
+                        <span class="agreement-text">(선택) 개인정보 수집 및 이용 동의</span>
+                    </label>
+                    <button type="button" class="view-details-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="agreement-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="optional-agreement">
+                        <span class="checkmark"></span>
+                        <span class="agreement-text">(선택) 민감(장애)정보 수집 및 이용 동의</span>
+                    </label>
+                    <button type="button" class="view-details-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <button type="button" class="next-button" id="nextButton" disabled>다음</button>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+</html>

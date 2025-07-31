@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - 정보 입력</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="signup2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="header.js" defer></script>
+    <script src="footer.js" defer></script>
+    <script src="signup2.js" defer></script>
+</head>
+<body>
+    
+    <div id="header-container"></div>
+
+    <main class="signup-container">
+        <div class="signup-box">
+            
+            <h2>회원가입</h2>
+            
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="id">
+                        <i class="fas fa-user icon"></i> 아이디
+                    </label>
+                    <input type="text" id="id" placeholder="아이디를 입력해주세요" required>
+                </div>
+                <div class="input-item">
+                    <label for="password">
+                        <i class="fas fa-lock icon"></i> 비밀번호
+                    </label>
+                    <input type="password" id="password" placeholder="비밀번호를 입력해주세요" required>
+                </div>
+                <div class="input-item">
+                    <label for="email">
+                        <i class="fas fa-envelope icon"></i> [선택] 이메일주소 (비밀번호 찾기 등 본인 확인용)
+                    </label>
+                    <input type="email" id="email" placeholder="이메일을 입력해주세요 (선택사항)">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="name">
+                        <i class="fas fa-user icon"></i> 이름
+                    </label>
+                    <input type="text" id="name" placeholder="이름을 입력해주세요" required>
+                </div>
+
+                <div class="input-item">
+                    <label for="dob">
+                        <i class="fas fa-calendar-alt icon"></i> 생년월일 8자리
+                    </label>
+                    <input type="text" id="dob" placeholder="YYYYMMDD" maxlength="8" required>
+                </div>
+            </div>
+
+            <div class="radio-group">
+                <label class="radio-container">
+                    <input type="radio" name="gender" value="male" required>
+                    <span class="radio-checkmark"></span>
+                    남자
+                </label>
+
+                <label class="radio-container">
+                    <input type="radio" name="gender" value="female" required>
+                    <span class="radio-checkmark"></span>
+                    여자
+                </label>
+
+                <label class="radio-container">
+                    <input type="radio" name="nationality" value="korean" required checked>
+                    <span class="radio-checkmark"></span>
+                    내국인
+                </label>
+
+                <label class="radio-container">
+                    <input type="radio" name="nationality" value="foreigner" required>
+                    <span class="radio-checkmark"></span>
+                    외국인
+                </label>
+            </div>
+
+            <button type="submit" class="next-button" id="submitButton" disabled>다음</button>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+</html>
