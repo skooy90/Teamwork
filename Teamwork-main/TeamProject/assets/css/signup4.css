@@ -1,0 +1,86 @@
+/* signup4.css */
+
+/* 가입 완료 메시지 박스 스타일 */
+.completion-message-box {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin-top: 30px; /* 상단 여백 */
+    padding: 30px; /* 내부 여백 */
+    background-color: #f9f9f9; /* 배경색 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    border: 1px solid #eee; /* 테두리 */
+}
+
+.completion-message-box h3 {
+    font-size: 1.8em; /* 제목 폰트 크기 */
+    color: #333; /* 제목 색상 */
+    margin-bottom: 20px; /* 제목 하단 여백 */
+}
+
+.completion-message-box p {
+    font-size: 1em; /* 본문 폰트 크기 */
+    color: #666; /* 본문 색상 */
+    line-height: 1.6; /* 줄 간격 */
+    margin-bottom: 30px; /* 본문 하단 여백 */
+}
+
+/* 버튼 그룹 스타일 */
+.button-group {
+    display: flex; /* 버튼들을 가로로 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    gap: 15px; /* 버튼 간 간격 */
+    margin-top: 20px; /* 상단 여백 */
+}
+
+/* 공통 버튼 스타일 */
+.action-button {
+    padding: 12px 25px; /* 내부 여백 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    cursor: pointer; /* 마우스 오버 시 포인터 변경 */
+    font-size: 1.1em; /* 폰트 크기 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 배경색, 텍스트 색상 변화에 애니메이션 효과 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+/* 주 버튼 (Primary Button) 스타일 */
+.action-button.primary {
+    background-color: #007bff; /* 파란색 배경 */
+    color: white; /* 흰색 텍스트 */
+}
+
+.action-button.primary:hover {
+    background-color: #0056b3; /* 호버 시 더 진한 파란색 */
+}
+
+/* 보조 버튼 (Secondary Button) 스타일 */
+.action-button.secondary {
+    background-color: #f0f0f0; /* 밝은 회색 배경 */
+    color: #333; /* 진한 회색 텍스트 */
+    border: 1px solid #ccc; /* 테두리 */
+}
+
+.action-button.secondary:hover {
+    background-color: #e0e0e0; /* 호버 시 약간 더 진한 회색 */
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .completion-message-box {
+        padding: 20px;
+    }
+    .completion-message-box h3 {
+        font-size: 1.5em;
+    }
+    .completion-message-box p {
+        font-size: 0.9em;
+    }
+    .button-group {
+        flex-direction: column; /* 작은 화면에서 버튼 세로 정렬 */
+        gap: 10px; /* 간격 조정 */
+    }
+    .action-button {
+        width: 100%; /* 버튼 전체 너비 차지 */
+        max-width: 250px; /* 최대 너비 제한 */
+        margin: 0 auto; /* 중앙 정렬 */
+    }
+}
