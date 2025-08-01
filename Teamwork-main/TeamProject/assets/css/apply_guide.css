@@ -1,0 +1,63 @@
+/* apply_guide.css */
+
+/* 가이드 섹션 스타일 */
+.guide-section {
+    margin-bottom: 40px;
+}
+
+.guide-section h3 {
+    font-size: 1.5em;
+    color: #34495e;
+    margin-bottom: 10px;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+}
+
+.guide-section p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-left: 15px;
+}
+
+.guide-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.final-step {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f4f7;
+    border-radius: 8px;
+}
+/* '다음' 버튼 컨테이너 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* '다음' 버튼 스타일 */
+.next-button {
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.next-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
