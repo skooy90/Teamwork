@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역유치원 챗봇</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: auto;
+        }
+
+        /* 아이콘 버튼 */
+        #openChatBtn {
+            position: fixed;
+            bottom: 140px;
+            right: 20px;
+            background: #5c7cfa;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0.4;
+        }
+
+        /* 챗봇 컨테이너 */
+        #chatbotContainer {
+            position: fixed;
+            top: 0;
+            right: -100%; /* 초기에는 화면 오른쪽에 숨겨짐 (모바일) */
+            width: 100%; /* 모바일에서 전체 너비 */
+            height: 100%; /* 모바일에서 전체 높이 */
+            background: #FFCB00;
+            box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease, opacity 0.3s ease;
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            opacity: 0;
+        }
+
+        /* 챗봇이 열렸을 때 */
+        #chatbotContainer.open {
+            right: 0;
+            opacity: 1;
+        }
+
+        #chatbotContainer h2 {
+            margin: 0;
+            padding: 15px;
+            font-size: 24px;
+            color: #4e6cf1;
+            text-align: center;
+            background-color: #FFCB00;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        #chat {
+            flex: 1;
+            overflow-y: auto;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* 메시지 스타일 */
+        .message-row {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 30px;
+        }
+
+        .message-row.user {
+            justify-content: flex-end;
+        }
+
+        .message-row.bot,
+        .message-row.gemini {
+            justify-content: flex-start;
+        }
+
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 8px;
+            background-color: #ccc;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-img.user-profile {
+            background-image: url('https://media.discordapp.net/attachments/1382988874070102207/1399616307061587978/c75c73e9f95e07c2.png?ex=6889a5c3&is=68885443&hm=c9990c4d03710a988dc1e71c1a65fb6dcc0609133d0f6c0b7a27053387e6665b&=&format=webp&quality=lossless');
+        }
+
+        .profile-img.bot-profile {
+            background-image: url('https://media.discordapp.net/attachments/1382988874070102207/1399616307367776336/38292a9cc414d6ff.png?ex=6889a5c3&is=68885443&hm=194369575ea0706d85a9b83b83a82ba8b27f26a76cb7af30827557946bf5f969&=&format=webp&quality=lossless');
+        }
+
+        .profile-img.gemini-profile {
+            background-image: url('https://it.wisc.edu/wp-content/uploads/Google-Gemini-1080x480-News-Image.jpg');
+        }
+
+        .message-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message-bubble {
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+            word-wrap: break-word;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-row.user .message-bubble {
+            background-color: #dbfef2;
+            color: #333;
+        }
+
+        .message-row.bot .message-bubble {
+            background-color: #cbec53;
+            color: #333;
+        }
+
+        .message-row.gemini .message-bubble {
+            background-color: Lavender;
+            color: #333;
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        .message-row.user .message-time {
+            margin-right: 8px;
+            text-align: right;
+        }
+
+        .message-row.bot .message-time,
+        .message-row.gemini .message-time {
+            margin-left: 8px;
+            text-align: left;
+        }
+
+        #userInput {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            background-image: url('https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png'); /* 입력 필드 아이콘 */
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            padding-left: 40px;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+        }
+
+        #userInput:focus {
+            box-shadow: 0 0 8px rgba(92, 124, 250, 0.6);
+        }
+
+        #sendBtn {
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-color: #a9b6f3; /* 전송 버튼 기본 색상 */
+            background-image: url('https://img.icons8.com/ios-glyphs/30/ffffff/paper-plane.png'); /* 전송 아이콘 */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 24px;
+        }
+
+        #sendBtn:hover {
+            background-color: gray;
+            background-blend-mode: multiply;
+        }
+
+        /* 데스크톱을 위한 미디어 쿼리 */
+        @media (min-width: 768px) {
+            #chatbotContainer {
+                width: 400px; /* 데스크톱에서 고정 너비 */
+                right: -400px; /* 데스크톱에서 화면 밖에 유지 */
+            }
+
+            #chatbotContainer.open {
+                right: 0; /* 데스크톱에서 오른쪽에서 슬라이드 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="openChatBtn" aria-label="챗봇 열기">💬</button>
+
+    <div id="chatbotContainer">
+        <h2 id="title">
+            <img src="https://media.discordapp.net/attachments/1382988874070102207/1399616307061587978/c75c73e9f95e07c2.png?ex=6889a5c3&is=68885443&hm=c9990c4d03710a988dc1e71c1a65fb6dcc0609133d0f6c0b7a27053387e6665b&=&format=webp&quality=lossless"
+                alt="남자아이" style="vertical-align: middle; height: 30px;">
+            지역유치원 챗봇
+            <img src="https://media.discordapp.net/attachments/1382988874070102207/1399616307367776336/38292a9cc414d6ff.png?ex=6889a5c3&is=68885443&hm=194369575ea0706d85a9b83b83a82ba8b27f26a76cb7af30827557946bf5f969&=&format=webp&quality=lossless"
+                alt="여자아이" style="vertical-align: middle; height: 30px;">
+        </h2>
+        <div id="chat"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="메시지를 입력하세요" aria-label="메시지 입력" />
+            <button id="sendBtn" aria-label="메시지 전송"></button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const chatbotContainer = document.getElementById("chatbotContainer");
+            const openChatBtn = document.getElementById("openChatBtn");
+            const chat = document.getElementById("chat");
+            const userInput = document.getElementById("userInput");
+            const sendBtn = document.getElementById("sendBtn");
+
+            // 챗봇 가시성 토글
+            openChatBtn.addEventListener("click", () => {
+                chatbotContainer.classList.toggle("open");
+
+                // 챗봇이 열렸을 때 본문 스크롤 방지
+                document.body.style.overflow = chatbotContainer.classList.contains("open") ? "hidden" : "auto";
+            });
+
+            // 버튼 클릭 시 메시지 전송
+            sendBtn.addEventListener("click", () => {
+                const message = userInput.value.trim();
+                if (message === "") return; // 빈 메시지는 전송하지 않음
+
+                appendMessage("🧑 사용자", message);
+                respond(message);
+                userInput.value = ""; // 전송 후 입력창 비우기
+            });
+
+            // Enter 키 누르면 메시지 전송
+            userInput.addEventListener("keyup", (event) => {
+                if (event.key === "Enter") sendBtn.click();
+            });
+
+            /**
+             * 채팅 디스플레이에 메시지를 추가합니다.
+             * @param {string} sender - 발신자 식별자 (예: "🧑 사용자", "🤖 챗봇", "✨ Gemini").
+             * @param {string} text - 메시지 텍스트.
+             */
+            function appendMessage(sender, text) {
+                const messageRow = document.createElement("div");
+                messageRow.classList.add("message-row");
+
+                const profileImg = document.createElement("div");
+                profileImg.classList.add("profile-img");
+
+                if (sender === "🧑 사용자") {
+                    messageRow.classList.add("user");
+                    profileImg.classList.add("user-profile");
+                } else if (sender === "🤖 챗봇") {
+                    messageRow.classList.add("bot");
+                    profileImg.classList.add("bot-profile");
+                } else if (sender === "✨ Gemini") {
+                    messageRow.classList.add("gemini");
+                    profileImg.classList.add("gemini-profile");
+                }
+
+                const messageContent = document.createElement("div");
+                messageContent.classList.add("message-content");
+
+                const messageBubble = document.createElement("div");
+                messageBubble.classList.add("message-bubble");
+                messageBubble.textContent = text;
+
+                const messageTime = document.createElement("div");
+                messageTime.classList.add("message-time");
+                const now = new Date();
+                messageTime.textContent = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+
+                if (sender === "🧑 사용자") {
+                    messageContent.appendChild(messageBubble);
+                    messageContent.appendChild(messageTime);
+                    messageRow.appendChild(messageContent);
+                    messageRow.appendChild(profileImg); // 사용자 프로필은 오른쪽에
+                } else {
+                    messageRow.appendChild(profileImg); // 봇/Gemini 프로필은 왼쪽에
+                    messageContent.appendChild(messageBubble);
+                    messageContent.appendChild(messageTime);
+                    messageRow.appendChild(messageContent);
+                }
+
+                chat.appendChild(messageRow);
+                chat.scrollTop = chat.scrollHeight; // 최신 메시지로 스크롤
+            }
+
+            /**
+             * Gemini API에 요청을 보냅니다.
+             * @param {string} message - Gemini에 보낼 사용자 메시지.
+             */
+            function askGeminiAPI(message) {
+                const GEMINI_API_KEY = "AIzaSyCMO0Edup71uWOyMrkMON6dXm3AlaWm4zY"; // 실제 키로 교체하세요
+                const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+
+                fetch(API_ENDPOINT, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: message
+                            }]
+                        }]
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        const geminiReply = data.candidates?.[0]?.content?.parts?.[0]?.text || "답변을 찾지 못했어요 😅";
+                        appendMessage("✨ Gemini", geminiReply);
+                    })
+                    .catch(error => {
+                        console.error("Gemini 통신 오류:", error);
+                        appendMessage("✨ Gemini", "오류가 발생했어요. 잠시 후 다시 시도해 주세요.");
+                    });
+            }
+
+            /**
+             * 사용자 메시지에 기반하여 응답을 Gemini에게 질문합니다.
+             * @param {string} message - 사용자 입력 메시지.
+             */
+            function respond(message) {
+                let response = "";
+
+                if (message.trim() === "1") {
+                    response = "송구영 팀장님";
+                } else if (message.trim() === "2") {
+                    response = "김경식 팀원";
+                } else if (message.trim() === "3") {
+                    response = "김상명 팀원";
+                } else if (message.trim() === "4") {
+                    response = "김현민 팀원";
+                } else if (message.trim() === "5") {
+                    response = "조민서 팀원";
+                } else {
+                    const askGemini = confirm("이 질문은 목록에 없어요. Gemini에게 물어볼까요?");
+                    if (askGemini) {
+                        askGeminiAPI(message);
+                        return;
+                    } else {
+                        response = "알겠습니다! 다른 질문 있으면 알려주세요 😄";
+                    }
+                }
+
+                appendMessage("🤖 챗봇", response);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
