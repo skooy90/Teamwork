@@ -105,4 +105,73 @@
     /* 세로 중앙 */
     align-items: center;
     cursor: pointer;
+
+    /* 애니메이션 효과를 위한 transition 추가 */
+    /* transition 오타 수정 */
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease;
+    /* box-shadow 오타 수정 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 마우스 호버 효과 */
+.button:hover {
+    background-color: #555555;
+}
+
+/* 클릭 시 딸깍 느낌 효과 */
+.button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 모달 창의 전체 배경. 초기에는 숨김 처리 */
+.modal {
+    display: none; /* 이 부분이 중요합니다! */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+}
+
+/* 모달 창 내용 컨테이너 */
+.modal-content {
+    background-color: #fefefe;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    width: 40%;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* 모달 메시지 텍스트 */
+.modal-content p {
+    padding: 50px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* 닫기 버튼 */
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #000;
 }
