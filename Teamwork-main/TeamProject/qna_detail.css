@@ -108,11 +108,70 @@
     background-color: #5a6268;
 }
 
+/* ================================================= */
+/* 모바일 반응형 디자인 (qna_detail.css에 추가) */
+/* ================================================= */
+
+/* 태블릿 및 모바일 기기 (화면 너비 768px 이하) */
 @media (max-width: 768px) {
+    /* 사이드바와 콘텐츠를 세로로 쌓는 것은 qualify.css에서 이미 처리됩니다. */
+    
+    /* 콘텐츠 영역의 패딩을 조정합니다. */
+    .content {
+        padding: 15px;
+    }
+
+    /* 페이지 제목의 글꼴 크기를 줄입니다. */
+    .content h2 {
+        font-size: 1.6em;
+    }
+
+    /* 정보 패널 글꼴 크기를 조정합니다. */
+    .qna-info {
+        font-size: 0.85em;
+    }
+
+    /* 본문 콘텐츠 패딩과 글꼴 크기를 조정합니다. */
+    .qna-content {
+        padding: 15px;
+        font-size: 0.9em;
+        min-height: 150px;
+    }
+
+    /* 댓글 섹션 패딩을 줄입니다. */
+    .comment-section {
+        padding: 15px;
+    }
+
+    .comment-item {
+        padding: 12px;
+    }
+
+    .comment-item .comment-info,
+    .comment-item .comment-content {
+        font-size: 0.8em;
+    }
+
+    /* 댓글 입력 영역을 세로로 쌓고, 버튼 너비를 100%로 설정합니다. */
     .comment-input-area {
         flex-direction: column;
+        gap: 10px;
     }
+
+    .comment-input-area textarea {
+        min-height: 60px;
+        font-size: 0.85em;
+    }
+
     .comment-input-area button {
         width: 100%;
+        padding: 12px;
+        font-size: 0.9em;
+    }
+
+    /* '목록으로' 버튼 스타일을 조정합니다. */
+    .list-button {
+        padding: 8px 16px;
+        font-size: 0.85em;
     }
 }
