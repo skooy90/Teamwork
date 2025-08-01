@@ -1,9 +1,7 @@
-/* qna_new.css */
-
-/* 검색 및 필터링 영역 (Q&A.html 전용) */
+/* 검색 및 필터링 영역 */
 .search-filter-area {
     display: flex;
-    justify-content: space-between; /* 양쪽 정렬 */
+    justify-content: flex-end;
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
@@ -11,19 +9,12 @@
     background-color: #f9f9f9;
     border: 1px solid #eee;
     border-radius: 5px;
-    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+    flex-wrap: wrap;
 }
-
-.search-conditions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .search-conditions label {
     font-size: 0.9em;
     color: #555;
-    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    margin-right: 5px;
 }
 
 .search-conditions select {
@@ -32,14 +23,11 @@
     border-radius: 4px;
     font-size: 0.9em;
     outline: none;
-    min-width: 100px; /* 드롭다운 최소 너비 */
 }
 
 .search-input-group {
     display: flex;
     gap: 5px;
-    flex-grow: 1; /* 검색 입력 그룹이 남은 공간을 채우도록 */
-    max-width: 300px; /* 검색 입력 그룹 최대 너비 */
 }
 
 .search-input {
@@ -48,8 +36,8 @@
     border-radius: 4px;
     font-size: 0.9em;
     outline: none;
-    flex-grow: 1; /* 검색 입력란이 남은 공간을 채우도록 */
-    min-width: 100px; /* 최소 너비 설정 */
+    flex-grow: 1;
+    min-width: 150px;
 }
 
 .search-button {
@@ -67,83 +55,124 @@
     background-color: #0056b3;
 }
 
-/* Q&A 목록 스타일 */
-.qna-list {
-    margin-top: 20px;
+/* 게시판 테이블 */
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
 }
 
-.qna-item {
+.qna-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+    min-width: 700px;
+    table-layout: fixed;
+}
+
+.qna-table th,
+.qna-table td {
     border: 1px solid #eee;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    overflow: hidden; /* 아코디언 애니메이션을 위해 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.qna-item .question {
-    background-color: #f8f8f8;
-    padding: 15px 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+/* Q&A 게시판 컬럼별 너비 지정 */
+.qna-table .col-id {
+    width: 8%;
+    text-align: center;
+}
+
+.qna-table .col-title {
+    width: 40%;
+}
+
+.qna-table .col-title a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.qna-table .col-title a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.qna-table .col-attachment {
+    width: 10%; /* 너비 조정 */
+    text-align: center;
+    overflow: visible; /* 글자가 잘리지 않도록 함 */
+}
+
+.qna-table .col-writer {
+    width: 12%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.qna-table .col-date {
+    width: 12%;
+    text-align: center;
+}
+
+.qna-table .col-comments {
+    width: 10%; /* 너비 조정 */
+    text-align: center;
+}
+
+.qna-table .col-views {
+    width: 8%;
+    text-align: center;
+}
+
+
+.qna-table thead th {
+    background-color: #f2f2f2;
     font-weight: bold;
     color: #333;
-    font-size: 1.05em;
-    position: relative;
-    transition: background-color 0.2s ease;
+    white-space: nowrap;
 }
 
-.qna-item .question:hover {
-    background-color: #f0f0f0;
+.qna-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.qna-item .q-label {
-    color: #007bff; /* 'Q.' 색상 */
-    font-size: 1.2em;
-    margin-right: 10px;
+.qna-table tbody tr:hover {
+    background-color: #eaeaea;
+}
+
+/* 답변 상태 라벨 스타일 */
+.status-answered {
+    background-color: #e6f7ff;
+    color: #007bff;
     font-weight: bold;
+    border-radius: 3px;
+    padding: 5px 8px;
+    display: inline-block;
+    font-size: 0.8em;
 }
 
-.qna-item .question-text {
-    flex-grow: 1;
-}
-
-.qna-item .toggle-icon {
-    width: 20px;
-    height: 20px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>'); /* 아래 화살표 */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.3s ease;
-    margin-left: 10px;
-}
-
-.qna-item.active .toggle-icon {
-    transform: rotate(180deg); /* 활성화 시 위 화살표로 회전 */
-}
-
-.qna-item .answer {
-    background-color: #ffffff;
-    padding: 15px 20px;
-    border-top: 1px solid #eee;
-    color: #555;
-    line-height: 1.6;
-    font-size: 0.95em;
-    /* display: none; /* JavaScript로 제어 */
-    /* transition: max-height 0.3s ease-out; /* 부드러운 애니메이션을 위해 */
-    /* max-height: 0; /* 초기 상태 */
-    /* overflow: hidden; */
-}
-
-.qna-item .a-label {
-    color: #28a745; /* 'A.' 색상 */
-    font-size: 1.2em;
-    margin-right: 10px;
+.status-pending {
+    background-color: #fffbe6;
+    color: #ffc107;
     font-weight: bold;
+    border-radius: 3px;
+    padding: 5px 8px;
+    display: inline-block;
+    font-size: 0.8em;
 }
 
-/* 페이지네이션 (notice.css와 동일하게 유지) */
+
+/* 페이지네이션 */
 .pagination {
     display: flex;
     justify-content: center;
@@ -164,7 +193,7 @@
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-size: 0.9em;
-    min-width: 30px; /* 버튼 최소 너비 */
+    min-width: 30px;
     text-align: center;
 }
 
@@ -181,15 +210,15 @@
 }
 
 .page-link.active:hover {
-    background-color: #007bff; /* 활성화된 상태에서는 호버 시 색상 유지 */
+    background-color: #007bff;
     color: white;
 }
 
 /* 반응형 조정 */
 @media (max-width: 768px) {
     .search-filter-area {
-        flex-direction: column; /* 세로로 쌓이도록 */
-        align-items: stretch; /* 전체 너비 차지 */
+        flex-direction: column;
+        align-items: stretch;
         gap: 15px;
     }
     .search-conditions {
@@ -198,37 +227,43 @@
         align-items: center;
         justify-content: space-between;
     }
-    .search-conditions label {
-        flex-grow: 1;
-        text-align: left;
-    }
     .search-conditions select {
         flex-grow: 1;
-        min-width: auto;
     }
     .search-input-group {
         width: 100%;
-        max-width: none;
     }
     .search-input {
         min-width: auto;
     }
-
-    .qna-item .question {
-        padding: 12px 15px;
-        font-size: 0.95em;
+    .qna-table {
+        font-size: 0.85em;
+        min-width: 500px;
     }
-    .qna-item .q-label {
-        font-size: 1.1em;
-        margin-right: 8px;
+    .qna-table th,
+    .qna-table td {
+        padding: 8px 10px;
     }
-    .qna-item .answer {
-        padding: 12px 15px;
-        font-size: 0.9em;
+    .qna-table .col-id {
+        width: 10%;
     }
-    .qna-item .a-label {
-        font-size: 1.1em;
-        margin-right: 8px;
+    .qna-table .col-title {
+        width: 35%;
+    }
+    .qna-table .col-attachment {
+        width: 10%;
+    }
+    .qna-table .col-writer {
+        width: 15%;
+    }
+    .qna-table .col-date {
+        width: 15%;
+    }
+    .qna-table .col-status {
+        width: 15%;
+    }
+    .qna-table .col-views {
+        width: 10%;
     }
 
     .pagination {
@@ -240,4 +275,12 @@
         font-size: 0.8em;
         min-width: 25px;
     }
+    
+    .qna-table .col-attachment {
+        width: 12%; /* 모바일에서도 너비 조정 */
+    }
+    .qna-table .col-comments {
+        width: 10%; /* 모바일에서도 너비 조정 */
+    }
 }
+
