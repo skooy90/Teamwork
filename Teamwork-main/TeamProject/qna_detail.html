@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="detail-title">Q&A 상세 보기</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="qualify.css">
+    <link rel="stylesheet" href="sidebar-dropdown.css">
+    <link rel="stylesheet" href="qna_detail.css">
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="qna_detail.js"></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h2>고객 지원</h2>
+            <nav class="sidebar-nav">
+                <div class="dropdown">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li><a href="notice.html">공지 게시판</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown active">
+                    <h3>자주하는 질문</h3>
+                    <ul>
+                        <li class="current-page"><a href="Q&A.html">Q&A</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>사이트 이용 안내</h3>
+                    <ul>
+                        <li><a href="guide.html">이용 안내 </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="content">
+            <div class="breadcrumb">
+                <span>▶ 고객 지원</span>
+                <span>&gt; 자주하는 질문</span>
+                <span>&gt; <a href="Q&A.html">Q&A</a></span>
+                <span>&gt; 상세 보기</span>
+            </div>
+
+            <h2 id="qna-title"></h2>
+
+            <div class="qna-info">
+                <span id="qna-writer"></span> | <span id="qna-date"></span> | <span id="qna-views"></span>
+            </div>
+
+            <div id="qna-content" class="qna-content">
+                </div>
+
+            <div class="comment-section">
+                <h3>댓글</h3>
+                <div id="comment-list">
+                    </div>
+                <div class="comment-input-area">
+                    <textarea id="comment-input" placeholder="댓글을 입력하세요."></textarea>
+                    <button id="submit-comment-btn">등록</button>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <a href="Q&A.html" class="list-button">목록으로</a>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+</html>
