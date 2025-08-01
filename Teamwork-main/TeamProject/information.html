@@ -15,10 +15,9 @@
 
     <!-- qualify.js 파일 연결 추가 -->
     <script src="../../assets/js/sidebar.js"></script>
-<head>
-    <script src="../../assets/js/information.js"></script> 
-    
-    </head>
+    <script src="../../assets/js/information.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
 
 </head>
 
@@ -70,22 +69,25 @@
                 <!-- 묶어놓음 -->
                 <div class="gatchi">
                     <!-- 케어메이트 이미지 사진-->
-                    <div class="info-placeholder"></div>
+                    <div class="info-placeholder">
+                        <img src="케어메이트 AI.png" class="img">
+                    </div>
                     <!-- 케어메이트 정보 입력란 -->
                     <div class="name-main">
                         <div class="name0">
-                            <div class="name1">
-                                <h2>아이 돌봄 전문!</h2>
-                            </div>
                             <div class="name2">
-                                <span>이름 : <strong>남궁도필</strong> </span><span style="margin-left: 35px;">나이 :
-                                    <strong>40</strong> </span><span style="margin-left: 35px;">성별 :
-                                    <strong>남성</strong></span>
+                                <div class="name22">아이 돌봄 전문!</div>
+                                <span>이름 : <strong>남궁도필</strong> </span><span style="margin-left: 15px;">나이 :
+                                    <strong>35세</strong> </span><span style="margin-left: 15px;">성별 :
+                                    <strong>여성</strong></span>
                                 <br>
-                                <span>경력 : <strong>3년</strong> </span><span style="margin-left: 35px;">범죄 이력 :
+                                <span>경력 : <strong>5년</strong> </span><span style="margin-left: 15px;">범죄 이력 :
                                     <strong>없음</strong></span>
                                 <br>
-                                <span>현재 상태 : <strong>활동 중</strong></span>
+                                <span>전문 분야 : <strong>영유아 돌봄, 노인 돌봄</strong> </span><span style="margin-left: 15px;">자격증 :
+                                    <strong>요양보호사, 보육교사</strong></span>
+                                <br>
+                                <span>기능 서비스 : <strong>주간, 야간</strong> </span><span style="margin-left: 15px;">현재 상태 : <strong>활동 중</strong></span>
                                 <div class="green"></div>
 
                                 <div class="h3"></div>
@@ -109,6 +111,11 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <p>도우미 신청이 완료되었습니다.</p>
+
+            <div class="modal-buttons">
+                <button id="goToMainBtn" class="modal-button">메인으로 이동</button>
+                <button id="goToStatusBtn" class="modal-button">신청 현황 보러가기</button>
+            </div>
         </div>
     </div>
 
