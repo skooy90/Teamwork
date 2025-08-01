@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역 유치원</title>
+    <link rel="stylesheet" href="../..//header&footer/header.css">
+    <link rel="stylesheet" href="../../header&footer/footer.css">
+    <link rel="stylesheet" href="../../header&footer/Chatbot.css">
+    <script src="../../header&footer/Chatbot.js"></script>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/modal.css">
+    <script src="../../header&footer/header.js"></script>
+    <script src="../../header&footer/footer.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+</head>
+
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section class="main-visual-section">
+            <div class="ca-container">
+                <button class="ca-arrow left-arrow">❮</button>
+                <div class="ca-image-wrapper">
+                    <img src="../../assets/img/KakaoTalk_20250725_101433840.jpg" alt="홍보 이미지 1" class="ca-image active">
+                    <img src="../../assets/img/샘플2.jfif" alt="홍보 이미지 2" class="ca-image">
+                    <img src="../../assets/img/샘플3.jfif" alt="홍보 이미지 3" class="ca-image">
+                </div>
+                <button class="ca-arrow right-arrow">❯</button>
+                <div class="ca-pagination">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-links-section">
+            <div class="quick-link-button" data-href="../Apply/live.html">서비스 이용 화면</div>
+            <div class="quick-link-button" data-href="../Map/map.html">실시간 병원 확인</div>
+            <div class="quick-link-button" data-href="../Qualify/qulify2.html">자격증 | 확인서 신청</div>
+            <div class="quick-link-button" data-href="../Apply/information.html">도우미 정보 보기</div>
+        </section>
+
+        <section class="content-display-section">
+            <h2>홍보 사진</h2>
+            <div class="promo-notice-container">
+                <div class="promotional-image-area">
+                    <img src="../../assets/img/샘플4.jfif" alt="프로모션 배너">
+                </div>
+                <div class="notice-board-area">
+                    <h3>공지사항</h3>
+                    <ul class="notice-list">
+                        <li><a href="#" onclick="openNotice(event, '공지', '중요한 공지사항입니다.', '2023.01.01')">[공지] 중요한
+                                공지사항입니다.</a> <span>2023.01.01</span></li>
+                        <li><a href="#" onclick="openNotice(event, '이벤트', '신년 맞이 이벤트 안내', '2023.01.05')">[이벤트] 신년 맞이 이벤트
+                                안내</a> <span>2023.01.05</span></li>
+                        <li><a href="#" onclick="openNotice(event, '안내', '서비스 점검 안내', '2023.01.10')">[안내] 서비스 점검 안내</a>
+                            <span>2023.01.10</span>
+                        </li>
+                        <li><a href="#" onclick="openNotice(event, '뉴스', '새로운 기능 추가 소식', '2023.01.15')">[뉴스] 새로운 기능 추가
+                                소식</a> <span>2023.01.15</span></li>
+                    </ul>
+                    <button class="view-more-button">더보기 ▼</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="Chatbot-container"></div>
+    <div id="footer-container"></div>
+</body>
+
+</html>

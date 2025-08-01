@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>챗봇</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* 아이콘 버튼 */
+        #openChatBtn {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background: #5c7cfa;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        /* 챗봇 컨테이너 */
+        #chatbotContainer {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 96%;
+            background: #FFCB00;
+            box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            opacity: 0;
+            transition: right 0.3s ease, opacity 0.3s ease;
+        }
+
+        #chatbotContainer h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #4e6cf1;
+            text-align: center;
+        }
+
+        #chat {
+            flex: 1;
+            overflow-y: auto;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        #title {
+            background-color: #FFCB00;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        #userInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #sendBtn {
+            padding: 10px;
+            background: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.2s ease;
+        }
+
+        #sendBtn:hover {
+            background-color: gray;
+            color: white;
+        }
+
+        .user-message {
+            text-align: right;
+            background-color: #dbeafe;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 챗봇 아이콘 버튼 -->
+    <button id="openChatBtn">💬</button>
+
+    <!-- 챗봇 창 -->
+    <div id="chatbotContainer">
+        <h2 id="title">✨ 챗봇 ✨</h2>
+        <div id="chat"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="메시지를 입력하세요" />
+            <button id="sendBtn">전송</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const chatbotContainer = document.getElementById("chatbotContainer");
+            const openChatBtn = document.getElementById("openChatBtn");
+            const chat = document.getElementById("chat");
+            const userInput = document.getElementById("userInput");
+            const sendBtn = document.getElementById("sendBtn");
+
+            openChatBtn.addEventListener("click", () => {
+                const isOpen = chatbotContainer.style.right === "0px";
+                chatbotContainer.style.right = isOpen ? "-400px" : "0px";
+                chatbotContainer.style.opacity = isOpen ? "0" : "1";
+            });
+
+            sendBtn.addEventListener("click", () => {
+                const message = userInput.value;
+                if (message.trim() === "") return;
+
+                appendMessage("🧑 사용자", message);
+                respond(message);
+                userInput.value = "";
+            });
+
+            userInput.addEventListener("keyup", (event) => {
+                if (event.key === "Enter") sendBtn.click();
+            });
+
+            function appendMessage(sender, text) {
+                const msg = document.createElement("div");
+                msg.className = sender === "🧑 사용자" ? "user-message" : "";  // 사용자 메시지에만 클래스 적용
+                msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+                chat.appendChild(msg);
+                chat.scrollTop = chat.scrollHeight;
+            }
+
+            function respond(message) {
+                let response = "무슨 말인지 잘 모르겠어요 😅";
+                if (message.includes("1")) response = "송구영 팀장님🐶";
+                else if (message.includes("2")) response = "김경식 팀원🐱";
+                else if (message.includes("3")) response = "김상명 팀원🐰";
+                else if (message.includes("4")) response = "김현민 팀원🐻";
+                else if (message.includes("5")) response = "조민서 팀원🐨";
+
+                appendMessage("🤖 챗봇", response);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

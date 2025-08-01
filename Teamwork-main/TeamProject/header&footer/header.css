@@ -1,0 +1,285 @@
+/* 헤더 전체 스타일 */
+.site-header {
+    background-color: white;
+    padding: 10px 20px;
+    color: #333;
+    font-family: sans-serif;
+    border-bottom: 1px solid #ddd;
+}
+
+/* --- 상단 영역 --- */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-header img {
+    height: 80px;
+    width: auto;
+    padding-left: 30px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-right a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-right a:hover {
+    font-weight: 500;
+    color: #ffcb00;
+}
+
+/* --- 검색창 스타일 --- */
+.search-container {
+    position: relative;
+    width: 50%;
+}
+
+#search-input {
+    width: 100%;
+    height: 38px;
+    padding: 8px 40px 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: none;
+    border: none;
+    padding: 0 12px;
+    cursor: pointer;
+    color: #555;
+}
+
+/* --- 네비게이션 영역 --- */
+.site-header nav {
+    position: relative;
+}
+
+.main-nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: stretch;
+    padding-top: 10px;
+    font-size: 1.5em;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site-header nav a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* PC: 호버 및 활성화 상태 스타일 */
+.site-header .nav-button:hover,
+.site-header .nav-button.active {
+    font-weight: 500;
+    color: #ffcb00;
+}
+
+/* 메가 메뉴 컨테이너 스타일 */
+.mega-menu-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 11;
+    padding: 30px 0;
+    box-sizing: border-box;
+    border-radius: 0 0 8px 8px;
+}
+
+/* PC: nav에 마우스가 올라가면 메가 메뉴를 보이게 함 */
+.site-header nav:hover .mega-menu-container {
+    display: block;
+}
+
+.mega-menu-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.submenu-column {
+    flex-direction: column;
+    min-width: 200px;
+    text-align: left;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: block;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    padding: 20px 0px 20px 30px;
+}
+
+/* PC: 마우스를 올리거나 활성화된 서브메뉴 컬럼에만 배경색 적용 */
+.submenu-column.active,
+.submenu-column:hover {
+    background-color: #ffcc00bd;
+}
+
+
+.submenu-column h4 {
+    color: #333;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+}
+
+.submenu-column a {
+    color: #555;
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.2s ease, background-color 0.3s ease;
+    display: block;
+    line-height: 1.4;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+.submenu-column a:hover {
+    color: #007bff;
+    font-weight: 500;
+}
+
+
+/* ---------------------------------- */
+/* --- 모바일 환경 스타일 (미디어 쿼리) --- */
+/* ---------------------------------- */
+@media (max-width: 767px) {
+    .main-nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+        align-items: stretch;
+        border-top: none;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        border-bottom: 1px solid #f0f0f0;
+        box-sizing: border-box;
+        align-items: center;
+    }
+
+    .nav-item .nav-button {
+        width: 100%;
+        padding: 8px 0;
+    }
+    
+    /* 모바일에서는 메가 메뉴를 기본적으로 숨김 */
+    .mega-menu-container {
+        display: block; /* 모바일에서는 항상 보이도록 설정 */
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #eee;
+        border-radius: 0;
+    }
+
+    /* 모바일에서는 서브메뉴 컬럼을 기본적으로 숨김 */
+    .submenu-column {
+        display: none;
+        width: 100%;
+        min-width: unset;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* 클릭 시 해당 서브메뉴 컬럼만 보이도록 */
+    .submenu-column.active {
+        display: block;
+    }
+
+    .submenu-column h4 {
+        margin-bottom: 5px;
+    }
+    
+    .submenu-column a {
+        text-align: left;
+        padding: 3px 0;
+        font-size: 0.9em;
+    }
+
+    .nav-button.active {
+        color: #ffcb00;
+        font-weight: 500;
+    }
+
+    .quick-links-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .quick-link-button {
+        min-width: unset;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .promo-notice-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .promotional-image-area,
+    .notice-board-area {
+        min-width: unset;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1100px) {
+    .header-left {
+        padding-top: 10px;
+        margin-bottom: -40px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}

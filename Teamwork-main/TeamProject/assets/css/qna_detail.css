@@ -1,0 +1,177 @@
+/* 기본 레이아웃은 qualify.css를 따름 */
+
+.qna-info {
+    font-size: 0.9em;
+    color: #777;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.qna-content {
+    min-height: 200px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    white-space: pre-wrap; /* 줄바꿈 유지 */
+    word-wrap: break-word;
+}
+
+/* 댓글 섹션 */
+.comment-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.comment-section h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.comment-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.comment-item .comment-info {
+    font-size: 0.85em;
+    color: #555;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+}
+
+.comment-item .comment-content {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.comment-input-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.comment-input-area textarea {
+    flex-grow: 1;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 0.9em;
+    outline: none;
+}
+
+.comment-input-area button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.comment-input-area button:hover {
+    background-color: #0056b3;
+}
+
+.button-group {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.list-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.list-button:hover {
+    background-color: #5a6268;
+}
+
+/* ================================================= */
+/* 모바일 반응형 디자인 (qna_detail.css에 추가) */
+/* ================================================= */
+
+/* 태블릿 및 모바일 기기 (화면 너비 768px 이하) */
+@media (max-width: 768px) {
+    /* 사이드바와 콘텐츠를 세로로 쌓는 것은 qualify.css에서 이미 처리됩니다. */
+    
+    /* 콘텐츠 영역의 패딩을 조정합니다. */
+    .content {
+        padding: 15px;
+    }
+
+    /* 페이지 제목의 글꼴 크기를 줄입니다. */
+    .content h2 {
+        font-size: 1.6em;
+    }
+
+    /* 정보 패널 글꼴 크기를 조정합니다. */
+    .qna-info {
+        font-size: 0.85em;
+    }
+
+    /* 본문 콘텐츠 패딩과 글꼴 크기를 조정합니다. */
+    .qna-content {
+        padding: 15px;
+        font-size: 0.9em;
+        min-height: 150px;
+    }
+
+    /* 댓글 섹션 패딩을 줄입니다. */
+    .comment-section {
+        padding: 15px;
+    }
+
+    .comment-item {
+        padding: 12px;
+    }
+
+    .comment-item .comment-info,
+    .comment-item .comment-content {
+        font-size: 0.8em;
+    }
+
+    /* 댓글 입력 영역을 세로로 쌓고, 버튼 너비를 100%로 설정합니다. */
+    .comment-input-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .comment-input-area textarea {
+        min-height: 60px;
+        font-size: 0.85em;
+    }
+
+    .comment-input-area button {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9em;
+    }
+
+    /* '목록으로' 버튼 스타일을 조정합니다. */
+    .list-button {
+        padding: 8px 16px;
+        font-size: 0.85em;
+    }
+}

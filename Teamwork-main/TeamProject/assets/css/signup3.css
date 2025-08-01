@@ -1,0 +1,278 @@
+/* signup3.css */
+
+/* signup.css에서 .signup-container와 .signup-box 스타일을 가져오므로, 여기서는 해당 스타일을 다시 정의하지 않습니다. */
+
+/* 메인 페이지 휴대폰 인증 정보 박스 */
+#cellphone-auth-info {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+#cellphone-auth-info h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#cellphone-auth-info p {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 고객 지원 섹션 */
+.customer-support-box {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    text-align: left; /* 내부 텍스트 왼쪽 정렬 */
+}
+
+.customer-support-box h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center; /* 제목 중앙 정렬 */
+}
+
+.customer-support-box .contact-info {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center; /* 연락처 정보 중앙 정렬 */
+}
+.customer-support-box .contact-info strong {
+    font-size: 1.1em;
+    color: #007bff;
+}
+
+.customer-support-box .faq-links {
+    text-align: center; /* FAQ 링크 그룹 중앙 정렬 */
+}
+
+.customer-support-box .faq-links p {
+    margin-bottom: 8px;
+}
+
+.customer-support-box .faq-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.customer-support-box .faq-links a:hover {
+    text-decoration: underline;
+}
+
+.customer-support-box .faq-links span {
+    color: #999; /* 화살표 색상 또는 아이콘 색상 */
+    margin-left: 5px;
+}
+
+/* 로그인 버튼 (고객 지원 아래) - 현재 HTML에는 없지만, 혹시 있을 수 있으니 유지 */
+.simple-login-button {
+    background-color: #6c757d; /* 회색 버튼 */
+    max-width: 200px; /* 너비를 줄여서 중앙 정렬 효과 */
+    margin: 30px auto 0; /* 위쪽 여백과 좌우 자동 여백으로 중앙 정렬 */
+    display: block; /* 블록 요소로 만들어 margin: auto가 작동하도록 함 */
+}
+
+.simple-login-button:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+/* 모달 기본 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed; /* 고정 위치 */
+    z-index: 1; /* 다른 요소 위에 표시 */
+    left: 0;
+    top: 0;
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+    overflow: auto; /* 내용이 넘칠 경우 스크롤 */
+    background-color: rgba(0,0,0,0.4); /* 반투명 검정 배경 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* 수직/수평 중앙 정렬 */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* 모달 너비 */
+    max-width: 500px; /* 최대 너비 */
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* 모달 애니메이션 */
+@keyframes animatetop {
+    from {top:-300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 1.6em;
+}
+
+/* 통신사 선택 버튼 */
+.telecom-options {
+    display: flex;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+    gap: 15px; /* 버튼 간 간격 */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.telecom-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    flex: 1 1 calc(50% - 15px); /* 두 개씩 한 줄에 표시 (gap 고려) */
+    max-width: 180px; /* 개별 버튼 최대 너비 */
+    transition: background-color 0.3s ease;
+}
+
+.telecom-button:hover {
+    background-color: #0056b3;
+}
+
+/* 인증번호 입력 필드 및 버튼 */
+#authCodeModal .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#authCodeModal .input-group input[type="text"] {
+    flex: 1; /* 가능한 공간을 채움 */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    min-width: 150px; /* 최소 너비 지정 */
+}
+
+#authCodeModal .input-group button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745; /* 녹색 버튼 */
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#authCodeModal .input-group button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+#authCodeModal .input-group button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#authCodeModal .timer {
+    font-size: 1em;
+    color: #dc3545; /* 빨간색 (시간 초과 경고) */
+    font-weight: bold;
+    margin-left: 5px;
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+#selectedTelecomText {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    #cellphone-auth-info {
+        padding: 15px;
+    }
+    #cellphone-auth-info h3 {
+        font-size: 1.3em;
+    }
+    #cellphone-auth-info p {
+        font-size: 0.9em;
+    }
+    .customer-support-box {
+        padding: 15px;
+    }
+    .customer-support-box h4 {
+        font-size: 1.1em;
+    }
+    .customer-support-box .contact-info,
+    .customer-support-box .faq-links {
+        font-size: 0.85em;
+    }
+    .simple-login-button {
+        max-width: 180px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+    .modal-content h3 {
+        font-size: 1.4em;
+    }
+    .telecom-button {
+        flex: 1 1 100%; /* 작은 화면에서 버튼들을 한 줄에 하나씩 배치 */
+        max-width: none;
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+    #authCodeModal .input-group {
+        flex-direction: column; /* 세로로 배치 */
+        align-items: stretch; /* 전체 너비 차지 */
+    }
+    #authCodeModal .input-group input[type="text"],
+    #authCodeModal .input-group button {
+        width: 100%; /* 입력 필드와 버튼 너비 조정 */
+        min-width: unset;
+    }
+    #authCodeModal .timer {
+        align-self: flex-end; /* 타이머를 오른쪽으로 정렬 */
+    }
+}

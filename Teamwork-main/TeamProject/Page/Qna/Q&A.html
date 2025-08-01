@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객 지원 - Q&A 게시판</title>
+    <link rel="stylesheet" href="../../header&footer/header.css">
+    <link rel="stylesheet" href="../../header&footer/footer.css">
+    <link rel="stylesheet" href="../../assets/css/qualify.css"> <!-- 기본 레이아웃 및 사이드바 스타일 -->
+    <link rel="stylesheet" href="../../assets/css/sidebar-dropdown.css"> <!-- 사이드바 드롭다운 스타일 -->
+    <link rel="stylesheet" href="../../assets/css/Q&A.css"> <!-- Q&A 페이지 전용 스타일 -->
+    <link rel="stylesheet" href="../../header&footer/Chatbot.css">
+    <script src="../../header&footer/Chatbot.js"></script>
+    <script src="../../header&footer/header.js"></script>
+    <script src="../../header&footer/footer.js"></script>
+    <script src="../../assets/js/sidebar.js"></script> <!-- 사이드바 드롭다운 기능 -->
+    <script src="../../assets/js/Q&A.js"></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h2>고객 지원</h2>
+            <nav class="sidebar-nav">
+                <div class="dropdown">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li><a href="notice.html">공지 게시판</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown active">
+                    <h3>자주하는 질문</h3>
+                    <ul>
+                        <li class="current-page"><a href="Q&A.html">Q&A</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <h3>사이트 이용 안내</h3>
+                    <ul>
+                        <li><a href="guide.html">이용 안내 </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="content">
+            <div class="breadcrumb">
+                <span>▶ 고객 지원</span>
+                <span>&gt; 자주하는 질문</span>
+                <span>&gt; Q&A</span>
+            </div>
+
+            <h2>Q&A 게시판</h2>
+
+            <div class="search-filter-area">
+                <div class="search-conditions">
+                    <label for="searchCondition">검색 조건</label>
+                    <select id="searchCondition">
+                        <option value="all">전체</option>
+                        <option value="title">제목</option>
+                        <option value="content">내용</option>
+                        <option value="writer">작성자</option>
+                    </select>
+                </div>
+                <div class="search-input-group">
+                    <input type="text" placeholder="검색어를 입력하세요" class="search-input">
+                    <button class="search-button">검색</button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="qna-table">
+                    <thead>
+                        <tr>
+                            <th class="col-id">번호</th>
+                            <th class="col-title">제목</th>
+                            <th class="col-attachment">첨부파일</th>
+                            <th class="col-writer">작성자</th>
+                            <th class="col-date">등록일</th>
+                            <th class="col-comments">댓글</th>
+                            <th class="col-views">조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody id="qnaTableBody">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="pagination" id="paginationControls">
+                </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+</html>

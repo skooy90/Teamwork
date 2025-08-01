@@ -1,0 +1,431 @@
+/* register.css */
+
+/* 기본 리셋 및 Body 스타일링 (register.html 전용) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* register.html 메인 콘텐츠 영역 */
+.main-content-register {
+    max-width: 800px; /* 폼에 적합한 너비로 조정 */
+    margin: 20px auto; /* 중앙 정렬 */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px; /* 내부 패딩 */
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+}
+
+.main-content-register h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.breadcrumb {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.breadcrumb span {
+    margin-right: 5px;
+}
+
+/* 등록 폼 컨테이너 */
+.register-form-container {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+}
+
+/* 폼 그룹 (라벨 + 입력 필드) */
+.form-group {
+    margin-bottom: 20px;
+    position: relative; /* 에러 메시지 위치 지정을 위해 */
+}
+
+.form-group label {
+    display: block; /* 라벨을 블록 요소로 만들어 줄바꿈 */
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="date"]:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* 라디오 버튼 그룹 */
+.radio-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 12px; /* 입력 필드와 유사한 패딩으로 정렬 */
+    box-sizing: border-box;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* 계산된 나이 표시 스타일 */
+.calculated-age {
+    display: inline-block; /* 텍스트와 함께 표시 */
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #666;
+    font-weight: bold;
+}
+
+/* 전체 너비 폼 그룹 */
+.form-group.full-width {
+    width: 100%;
+}
+
+/* 주소 입력 그룹 (input + button) */
+.address-input-group {
+    display: flex; /* input과 button을 한 줄에 배치 */
+    gap: 10px; /* input과 button 사이 간격 */
+    width: 100%;
+}
+
+.address-input-group input[type="text"] {
+    flex-grow: 1; /* input이 남은 공간을 채우도록 */
+    width: auto; /* flex-grow와 함께 사용 */
+}
+
+.address-confirm-btn {
+    background-color: #6c757d; /* 회색 기본 버튼 */
+    color: white;
+    padding: 10px 15px;
+    font-size: 0.95em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* 버튼 크기 고정 */
+}
+
+.address-confirm-btn:hover {
+    background-color: #5a6268;
+}
+
+.address-confirm-btn.confirmed {
+    background-color: #28a745; /* 확인됨 상태일 때 초록색 */
+    cursor: default; /* 클릭 불가 커서 */
+}
+
+.address-confirm-btn.confirmed:hover {
+    background-color: #28a745; /* 호버 시에도 색상 유지 */
+}
+
+
+/* 약관 동의 체크박스 그룹 */
+.terms-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.terms-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0; /* 체크박스 크기 고정 */
+}
+
+.terms-group label {
+    margin-bottom: 0; /* 체크박스 라벨 하단 여백 제거 */
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.terms-group label a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.terms-group label a:hover {
+    text-decoration: underline;
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+    color: red;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block; /* 줄바꿈하여 표시 */
+}
+
+/* 에러 발생 시 입력 필드 테두리 */
+.error-border {
+    border-color: red !important; /* !important로 우선순위 높임 */
+}
+
+/* 등록하기 버튼 컨테이너 */
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.register-btn {
+    background-color: #007bff; /* 파란색 배경 */
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 180px;
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* ============================================== */
+/* 모달 스타일 (약관 모달 및 완료 모달) */
+/* ============================================== */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed; /* 화면에 고정 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* 내용이 넘치면 스크롤 */
+    background-color: rgba(0,0,0,0.4); /* 반투명 검정 배경 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 90%; /* 모달 너비 */
+    max-width: 600px; /* 약관 모달을 위해 최대 너비 증가 */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+    display: flex; /* 내부 콘텐츠 정렬을 위해 flex 사용 */
+    flex-direction: column; /* 세로로 정렬 */
+    justify-content: flex-start; /* 상단 정렬 (약관 내용이 많을 수 있으므로) */
+    align-items: center; /* 수평 중앙 정렬 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    max-height: 80vh; /* 화면 높이의 80%를 넘지 않도록 */
+}
+
+.modal-content.completion-content {
+    justify-content: center; /* 완료 메시지는 중앙 정렬 */
+    min-height: 150px; /* 완료 메시지 모달 최소 높이 */
+}
+
+.modal-content h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 약관 스크롤 영역 */
+.terms-scroll-area {
+    max-height: 300px; /* 약관 내용이 길어질 경우 스크롤 */
+    overflow-y: auto;
+    text-align: left; /* 약관 내용은 왼쪽 정렬 */
+    padding-right: 10px; /* 스크롤바 공간 확보 */
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 0.95em;
+    color: #444;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.terms-scroll-area p {
+    margin-bottom: 10px;
+}
+
+.terms-scroll-area p:last-child {
+    margin-bottom: 0;
+}
+
+/* 약관 동의 및 닫기 버튼 */
+.agree-terms-btn {
+    background-color: #28a745; /* 초록색 배경 */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.agree-terms-btn:hover {
+    background-color: #218838;
+}
+
+/* 완료 메시지 스타일 */
+.completion-content p {
+    font-size: 1.8em;
+    color: #28a745; /* 성공 메시지 색상 (초록색) */
+    font-weight: bold;
+    margin: 0; /* 기본 마진 제거 */
+    text-align: center;
+}
+
+/* 모달 나타나는 애니메이션 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/* ============================================== */
+/* 반응형 조정 */
+/* ============================================== */
+@media (max-width: 768px) {
+    .main-content-register {
+        margin: 10px;
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .main-content-register h2 {
+        font-size: 1.6em;
+        text-align: center;
+    }
+    .breadcrumb {
+        text-align: center;
+    }
+    .register-form-container {
+        padding: 15px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        font-size: 0.9em;
+    }
+    .form-group input, .form-group select {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+    .radio-group {
+        flex-direction: column; /* 라디오 버튼 세로 정렬 */
+        align-items: flex-start;
+        gap: 5px;
+        padding: 8px 10px; /* 모바일 패딩 조정 */
+    }
+    .terms-group {
+        flex-direction: column; /* 약관 동의 세로 정렬 */
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .terms-group label {
+        font-size: 0.9em;
+    }
+    .register-btn {
+        padding: 10px 20px;
+        font-size: 1em;
+        min-width: 150px;
+    }
+    .calculated-age {
+        font-size: 0.8em;
+        margin-left: 0; /* 모바일에서 좌측 정렬 */
+        margin-top: 5px; /* 라벨 아래로 이동 */
+        display: block; /* 블록 요소로 변경 */
+    }
+
+    /* 주소 입력 그룹 모바일 조정 */
+    .address-input-group {
+        flex-direction: column; /* 세로로 쌓이도록 */
+        gap: 8px;
+    }
+    .address-confirm-btn {
+        width: 100%; /* 버튼 너비 100% */
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    /* 모달 반응형 조정 */
+    .modal-content {
+        width: 95%; /* 모바일에서 모달 너비 늘리기 */
+        padding: 20px;
+        max-width: none; /* 최대 너비 제한 해제 */
+        max-height: 90vh; /* 화면 높이의 90%를 넘지 않도록 */
+    }
+    .modal-content.completion-content {
+        min-height: 120px;
+    }
+    .modal-content h3 {
+        font-size: 1.3em;
+    }
+    .terms-scroll-area {
+        max-height: 60vh; /* 모바일에서 약관 스크롤 영역 높이 조정 */
+        padding: 10px;
+        font-size: 0.85em;
+    }
+    .agree-terms-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+    .completion-content p {
+        font-size: 1.5em;
+    }
+}

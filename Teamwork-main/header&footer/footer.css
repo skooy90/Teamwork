@@ -1,0 +1,80 @@
+/* sticky footer를 위한 body 스타일 (핵심 변경사항) */
+html, body {
+    height: 100%; /* html과 body의 높이를 100%로 설정 */
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    display: flex;
+    /* flex-direction: column; 자식 요소들을 세로 방향으로 정렬 */
+    min-height: 100vh; /* 뷰포트 높이의 최소 100%를 차지하도록 설정 */
+}
+
+#main-content {
+    flex-grow: 1; /* 메인 콘텐츠가 남은 공간을 모두 차지하도록 설정 */
+}
+
+.site-footer {
+    background-color: white;
+    padding: 20px;
+    color: #333;
+    /* font-family: sans-serif; 글꼴 변경 틀 */
+    border-top: 1px solid #ddd;
+    text-align: center;
+    /* margin-top: 20px; 이전 margin-top은 필요 없음 */
+}
+
+.footer-logo img {
+    height: 80px;
+    /* 너비 대신 높이를 고정하여 비율 유지 */
+    width: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 50px;
+    
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* 모바일에서 세로로 정렬 */
+        justify-content: center; /* 세로 중앙 정렬 */
+        /* align-items: center; 가로 중앙 정렬 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        align-items: stretch
+        
+    }
+
+    .footer-logo {
+        margin-bottom: 20px; /* 로고 아래 여백 추가 */
+    }
+
+    .footer-links {
+        display: flex; /* 링크들을 가로로 정렬 (필요시) */
+        flex-wrap: wrap; /* 공간이 부족하면 다음 줄로 넘어가도록 설정 */
+        justify-content: center; /* 링크들을 가운데 정렬 */
+        margin-top: 15px; /* 로고와 링크 사이에 여백 추가 */
+    }
+
+    .footer-links a {
+        margin: 10px 15px; /* 모바일에서 링크 간 간격 조정 */
+        font-size: 0.9em; /* 폰트 크기 약간 줄이기 */
+        width: 100%;
+    }
+
+}

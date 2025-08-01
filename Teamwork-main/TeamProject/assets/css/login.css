@@ -1,0 +1,308 @@
+/* PC 스타일 (기본) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+#header-container,
+#footer-container {
+    width: 100%;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* 헤더/푸터 높이 고려 */
+    padding: 20px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.login-box {
+    /* border: 1px solid red; */
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 66%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.login-left {
+    flex: 1;
+    padding-right: 30px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.box-out {
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.box-in {
+    display: none; /* PC에서는 숨김 */
+}
+
+.ID-save {
+    margin: 15px 0;
+    text-align: left;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.ID-save input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.input-group p.ip-thicK { /* 그룹화된 p 태그의 마진 조정 */
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #333;
+}
+
+.ID,
+.PassWord {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px; /* 라벨과의 간격 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+
+
+.login {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #6a6a6a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.login:hover {
+    background-color: #555;
+}
+
+.two-login {
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 10px; /* 각 인증서 로그인 버튼 간 간격 */
+    background-color: #fff;
+    color: #6a6a6a;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.two-login:hover {
+    background-color: #f0f0f0;
+}
+
+.border-line {
+    width: 1px;
+    background-color: #eee;
+    margin: 0 30px;
+}
+
+.member {
+    flex: 1;
+    padding-top: 45px;
+    padding-left: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.member h1 {
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.member h3 {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.ship {
+    width: 80%;
+    padding: 12px 20px;
+    background-color: #FFD400;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* 하단 버튼과의 간격 */
+}
+
+.ship:hover {
+    background-color: #e6c200;
+}
+
+.log-button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 80%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.log-button .two-login {
+    flex-grow: 1;
+    max-width: 180px;
+    padding: 10px 15px;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+
+/* 반응형 웹 (모바일 화면) - 최대 768px */
+@media screen and (max-width: 768px) {
+
+    .login-page {
+        padding: 30px 10px;
+        height: auto;  /* -height가 설정되어 있으므로 필요 없을 수 있음 */
+        min-height: auto; /* 이 부분을 추가 */
+        display: flex; /* 이 부분을 추가 */
+        flex-direction: column; /* 이 부분을 추가 */
+        justify-content: flex-start; /* 이 부분을 추가 (콘텐츠가 위에서부터 보이도록) */
+        align-items: center; /* 이 부분을 추가 (가로 중앙 정렬) */
+    }
+
+    .login-box {
+        flex-direction: column; /* 세로로 변경 */
+        width: 100%;
+        max-width: none; /* PC의 max-width 제한 해제 */
+        padding: 20px;
+        border: none;
+        box-shadow: none;
+        border-radius: 0; /* 모바일에서 박스 모서리 둥글게 해제 (선택 사항) */
+        height: auto; /* 이 부분을 추가 */
+    }
+
+    .input-group {
+        width: 90%; /* 이 부분을 추가 */
+        margin: 20px auto; /* 이 부분을 추가 (상단 마진 조정) */
+        display: flex; /* 이 부분을 추가 */
+        flex-direction: column; /* 이 부분을 추가 */
+        align-items: center; /* 이 부분을 추가 */
+    }
+
+    .button-group-left {
+        width: 90%; /* 이 부분을 추가 */
+        margin: 30px auto 0 auto; /* 이 부분을 추가 (상단 마진 조정) */
+        display: flex; /* 이 부분을 추가 */
+        flex-direction: column; /* 이 부분을 추가 */
+        align-items: center; /* 이 부분을 추가 */
+    }
+
+    .login-left {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px; /* 로그인 섹션과 회원가입 섹션 사이 간격 */
+        text-align: center; /* 내부 요소들 중앙 정렬을 위해 */
+    }
+
+    .box-out {
+        display: none; /* 모바일에서는 바깥 로그인 제목 숨김 */
+    }
+
+    .box-in {
+        display: block; /* 모바일에서는 안쪽 로그인 제목 표시 */
+        font-size: 1.5em;
+        margin-top: 0; /* box-out을 숨겼으므로 위쪽 마진 조정 */
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .ID-save {
+        width: 90%;
+        margin: 10px auto; /* 중앙 정렬 */
+        text-align: right; /* "아이디 저장" 체크박스 텍스트 오른쪽 정렬 */
+    }
+
+    /* ID, Password input 필드와 버튼 그룹 중앙 정렬 */
+    
+
+    .ID,
+    .PassWord {
+        width: 100%; /* 부모 input-group에 맞게 너비 100% */
+        margin: 10px auto; /* input 필드 자체의 세로 마진 조정 */
+        display: block; /* 블록 요소로 만들어 마진 auto 적용 */
+    }
+    
+    .login,
+    .two-login {
+        width: 100%; /* 부모 button-group-left에 맞게 너비 100% */
+        margin: 10px auto; /* 각 버튼의 세로 마진 조정 */
+        display: block; /* 블록 요소로 만들어 마진 auto 적용 */
+    }
+
+
+    .border-line {
+        display: none; /* 모바일에서는 구분선 숨김 */
+    }
+
+    .member {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 0; /* login-left와 member 섹션 간격 */
+        /* text-align: center; */
+        /* display: flex; flex-direction: column; align-items: center; */
+    }
+
+    .member h1,
+    .member h3 {
+        padding: 0 10px; /* 텍스트 좌우 패딩 */
+    }
+
+    .ship {
+        width: 90%; /* 모바일에서 회원가입 버튼 너비 조정 */
+        margin: 20px auto; /* 중앙 정렬 */
+    }
+
+    .log-button {
+        width: 90%; /* 모바일에서 아이디찾기/비번재설정 버튼 그룹 너비 조정 */
+        margin: 20px auto 0 auto; /* 위쪽 마진 및 중앙 정렬 */
+        justify-content: center; /* 버튼들을 중앙으로 */
+        flex-wrap: wrap; /* 버튼이 많아지면 다음 줄로 넘어가도록 설정 */
+    }
+
+    .log-button .two-login {
+        flex-grow: 0; /* 모바일에서 flex-grow 해제 (원하는 너비 고정 또는 flex-basis 사용) */
+        width: calc(50% - 5px); /* 두 버튼이 가로로 반반씩 차지하도록 (gap 10px 고려) */
+        max-width: none; /* 최대 너비 제한 해제 */
+        margin: 5px 0; /* 버튼 자체의 세로 마진 */
+        padding: 12px 10px;
+        font-size: 0.9em; /* 폰트 사이즈 조정 */
+    }
+}

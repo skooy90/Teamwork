@@ -1,0 +1,254 @@
+/* information.css */
+
+.main {
+    width: 74%;
+}
+
+/* 묶어놓움 */
+.gatchi {
+    display: flex;
+    width: 100%;
+}
+
+/* 케어메이트 이미지 사진 */
+.info-placeholder {
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 6px;
+    width: 400px;
+    height: 400px;
+    margin-right: 10px;
+}
+
+.img {
+    width: 400px;
+    border-radius: 5px;
+}
+
+/* 케어메이트 정보 입력란 */
+.name-main {
+    border-radius: 10px;
+    width: 460px;
+}
+
+.name0 {
+    margin-left: 10px;
+}
+
+.name22 {
+    color: #333333;
+    font-weight: 700;
+    font-size: 30px;
+    padding-bottom: 25px;
+}
+
+.name2 {
+    background-color: #f8f8d8;
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 7px;
+    width: 467px;
+    height: 400px;
+    /* 글씨들을 아래로 내리기 위해 flexbox를 다시 사용합니다. */
+    display: flex-wrap;
+    /* 가로 방향 정렬 */
+    flex-direction: wrap;
+    /* 상단에서부터 시작 */
+    justify-content: flex-start;
+    /* 좌측 정렬 */
+    align-items: flex-start;
+    padding-top: 30px;
+    padding-left: 12px;
+    /* 패딩이 너비에 포함되도록 설정 */
+    box-sizing: border-box;
+}
+
+.name2 span {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.name2 strong {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+
+.info-line {
+    margin-bottom: 12px;
+}
+
+.green {
+    background-color: green;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align:text-top;
+}
+
+.h3{
+    border-bottom : 2px solid #eee;
+    padding-bottom: 10px;
+    font-size: 2em;
+}
+
+/* 도우미 신청하기 버튼 만들기 */
+.button-main {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    /* 모양 만들기 */
+    background-color: #333333;
+    border: 1px solid #333333;
+    border-radius: 30px;
+
+    /* 모양 크기 조절 */
+    width: 200px;
+    height: 50px;
+
+    /* 버튼 글씨 꾸미기 */
+    color: white;
+    text-align: center;
+    display: flex;
+    /* 가로 중앙 */
+    justify-content: center;
+    /* 세로 중앙 */
+    align-items: center;
+    cursor: pointer;
+
+    /* 애니메이션 효과를 위한 transition 추가 */
+    /* transition 오타 수정 */
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease;
+    /* box-shadow 오타 수정 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 마우스 호버 효과 */
+.button:hover {
+    background-color: #555555;
+}
+
+/* 클릭 시 딸깍 느낌 효과
+.button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+/* 모달 창의 전체 배경. 초기에는 숨김 처리 */
+.modal {
+    display: none; /* 이전에는 flex와 중복되던 이 부분을, 이제 JavaScript와 연동해서 사용합니다. */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    /* 기존 flex 속성은 이 클래스에 남겨둡니다. */
+    align-items: center;
+    justify-content: center;
+}
+
+/* JavaScript에서 'show' 클래스가 추가되면 모달이 보이게 하는 스타일 */
+.modal.show {
+    display: flex;
+}
+
+/* 모달 창 내용 컨테이너 */
+.modal-content {
+    background-color: #ffffff;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    width: 40%;
+    text-align: center;
+    border: 1px solid #ddd;
+    /* 사진과 비슷한 너비 */
+    max-width: 500px;
+}
+
+/* 닫기 버튼 (X 아이콘) */
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #000;
+}
+
+/* 모달 메시지 텍스트 */
+.modal-content p {
+    padding: 50px 20px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* 모달 버튼 컨테이너 */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+/* 모달 버튼 공통 스타일 */
+.modal-button1 {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    width: 200px;
+    height: 50px;
+}
+
+.modal-button:hover {
+    background-color: #eee;
+}
+
+/* 모달 버튼 공통 스타일 */
+.modal-button {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    width: 200px;
+    height: 50px;
+}
+
+/* 특정 버튼 스타일 (선택사항) */
+#goToMainBtn {
+    background-color: #333;
+    color: white;
+    border: 1px solid #333;
+}
+
+#goToMainBtn:hover {
+    background-color: #555;
+}
