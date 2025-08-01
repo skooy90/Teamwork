@@ -1,0 +1,108 @@
+/* information.css */
+
+.h2{
+    border-bottom : 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.main {
+    width: 74%;
+}
+
+/* 묶어놓움 */
+.gatchi {
+    display: flex;
+    width: 100%;
+}
+
+/* 케어메이트 이미지 사진 */
+.info-placeholder {
+    background-color: #afafaf;
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    margin-right: 50px;
+}
+
+/* 케어메이트 정보 입력란 */
+.name-main {
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+}
+
+.name0 {
+    margin-left: 20px;
+}
+
+.name1 h2 {
+    color: #333333;
+}
+
+.name2 {
+    width: 415px;
+    height: 280px;
+    display: inline-block;
+}
+
+.name2 span {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.name2 strong {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.info-line {
+    margin-bottom: 12px;
+}
+
+.green {
+    background-color: green;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align:text-top;
+}
+
+.h3{
+    border-bottom : 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* 도우미 신청하기 버튼 만들기 */
+.button-main {
+    margin-top: 30px;
+    margin-left: 80px;
+}
+
+.button {
+    /* 모양 만들기 */
+    background-color: #333333;
+    border: 1px solid #333333;
+    border-radius: 30px;
+
+    /* 모양 크기 조절 */
+    width: 200px;
+    height: 50px;
+
+    /* 버튼 글씨 꾸미기 */
+    color: white;
+    text-align: center;
+    display: flex;
+    /* 가로 중앙 */
+    justify-content: center;
+    /* 세로 중앙 */
+    align-items: center;
+    cursor: pointer;
+}
