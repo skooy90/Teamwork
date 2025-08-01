@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자격증 발급 신청</title>
-    <link rel="stylesheet" href="qualify.css">
-    <link rel="stylesheet" href="sidebar-dropdown.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
-    <script src="header.js"></script>
-    <script src="footer.js"></script>
-    <script src="sidebar.js"></script>
+    <link rel="stylesheet" href="../../assets/css/qualify.css">
+    <link rel="stylesheet" href="../../assets/css/sidebar-dropdown.css">
+    <link rel="stylesheet" href="../..//header&footer/header.css">
+    <link rel="stylesheet" href="../..//header&footer/footer.css">
+    <script src="../..//header&footer/header.js"></script>
+    <script src="../..//header&footer/footer.js"></script>
+    <script src="../../assets/js/sidebar.js"></script>
+    <script src="../../assets/js/qualify.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </head>
+
 <body>
 
-    <div id="header-container"></div>
+   <div id="header-container"></div>
     <main class="container">
         <aside class="sidebar">
             <h2>자격증 / 확인서</h2>
@@ -38,7 +42,7 @@
                     <h3>확인서 발급</h3>
                     <ul>
                         <li><a href="certificate_issue.html">확인서 발급 신청</a></li>
-                        <li><a href="certificate_history.html">확인서 발급 신청내역 조회</a></li> 
+                        <li><a href="certificate_history.html">확인서 발급 신청내역 조회</a></li>
                     </ul>
                 </div>
             </nav>
@@ -61,19 +65,19 @@
                 </p>
                 <div class="image-upload-area">
                     <div class="image-placeholder">
-                        <img src="https://maked.kr/common/img/default_profile.png" alt="이미지 업로드">
+                        <img src="https://via.placeholder.com/100x100?text=Image" alt="이미지 업로드">
                         <p>안됨 X</p>
                     </div>
                     <div class="image-placeholder">
-                        <img src="https://maked.kr/common/img/default_profile.png" alt="이미지 업로드">
+                        <img src="https://via.placeholder.com/100x100?text=Image" alt="이미지 업로드">
                         <p>안됨 X</p>
                     </div>
                     <div class="image-placeholder">
-                        <img src="https://maked.kr/common/img/default_profile.png" alt="이미지 업로드">
+                        <img src="https://via.placeholder.com/100x100?text=Image" alt="이미지 업로드">
                         <p>안됨 X</p>
                     </div>
                     <div class="image-placeholder">
-                        <img src="https://maked.kr/common/img/default_profile.png" alt="이미지 업로드">
+                        <img src="https://via.placeholder.com/100x100?text=Image" alt="이미지 업로드">
                         <p>안됨 X</p> <br>
                     </div>
                 </div>
@@ -86,10 +90,22 @@
                 <button class="apply-certification-btn">자격증 신청하기</button>
             </div>
             <!-- 여기까지 기존 qulify2.html의 내용 -->
-
         </section>
     </main>
 
     <div id="footer-container"></div>
+
+    <!-- 모달 창 추가 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <p>자격증 신청이 완료되었습니다.</p>
+
+            <div class="modal-buttons">
+                <button id="goToMainBtn" class="modal-button">메인으로 이동</button>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
