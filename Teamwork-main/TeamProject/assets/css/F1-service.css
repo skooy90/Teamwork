@@ -1,0 +1,74 @@
+/* information.css */
+
+/* breadcrumb와 content 영역을 맞추기 위한 스타일 */
+main.container {
+    display: flex;
+    justify-content: center; /* 전체 콘텐츠 영역을 중앙에 배치 */
+    padding: 0;
+}
+
+.content {
+    flex-grow: 1; /* 남은 공간을 채우도록 확장 */
+    max-width: 800px; /* 콘텐츠 영역의 최대 너비를 설정 (원하는 값으로 조정) */
+    margin-left: 20px; /* sidebar와의 간격 조정 */
+}
+
+/* breadcrumb 스타일 (breadcrumb가 content의 자식 요소라고 가정) */
+.breadcrumb {
+    margin-bottom: 20px;
+}
+
+/* h2 제목 스타일 (breadcrumb와 왼쪽 정렬) */
+.h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 0; /* breadcrumb와 맞추기 위해 패딩 제거 */
+}
+
+/* box와 button-main을 묶는 부분. h2와 정렬되도록 조정 */
+.gatchi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 자식 요소들을 왼쪽 정렬 */
+    width: 100%;
+}
+
+.box {
+    border: 1px solid rgb(223, 238, 236);
+    background-color: rgb(239, 241, 241);
+    border-radius: 10px;
+    width: 95%;
+    padding: 20px;
+    text-align: left;
+}
+
+/* 버튼 만들기 */
+.button-main {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center; /* 버튼을 왼쪽 정렬 */
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.button {
+    background-color: #333333;
+    border: 1px solid #333333;
+    border-radius: 30px;
+    width: 200px;
+    height: 50px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: #555555;
+}
+
+/* ... 모달 및 기타 스타일은 그대로 유지 ... */
