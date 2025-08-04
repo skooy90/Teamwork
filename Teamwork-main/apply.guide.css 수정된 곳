@@ -1,0 +1,23 @@
+guide-section {
+    margin-bottom: 50px; ----------------------- 수정된 곳
+}
+
+.guide-section h3 {
+    font-size: 1.5em;
+    color: #465c82; --------------------------------수정된 곳
+    background-color: #ffc107;
+    margin-bottom: 10px;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+}
+.next-button {
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #465c82; --------------------------------수정된 곳
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
