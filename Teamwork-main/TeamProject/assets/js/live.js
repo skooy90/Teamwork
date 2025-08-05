@@ -43,12 +43,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 채팅하기 기능
-    const chatButton = document.querySelector('.chat-button');
-    if (chatButton) {
+     const chatButton = document.querySelector('.chat-button');
+    const chatWindow = document.getElementById('chat-window');
+    const closeChatButton = document.getElementById('close-chat');
+    const chatInput = document.getElementById('chat-input');
+    const sendChatButton = document.getElementById('send-chat');
+    const chatMessages = document.getElementById('chat-messages');
+
+     if (chatButton && chatWindow && closeChatButton && chatInput && sendChatButton && chatMessages) {
         chatButton.addEventListener('click', function() {
-            alert('채팅 기능이 곧 추가될 예정입니다.');
+            chatWindow.classList.add('active');
+            chatInput.focus();
         });
-    }
+
+        closeChatButton.addEventListener('click', function() {
+            chatWindow.classList.remove('active');
+        });
+        
+          function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('chat-message', 'sent');
+                messageElement.textContent = message;
+                chatMessages.appendChild(messageElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                chatInput.value = '';
+                
+                setTimeout(() => {
+                    const receivedMessageElement = document.createElement('div');
+                    receivedMessageElement.classList.add('chat-message', 'received');
+                    receivedMessageElement.textContent = "네, 말씀하신 내용 잘 확인했습니다.";
+                    chatMessages.appendChild(receivedMessageElement);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000); 
+            }
+          }
+        }
 
     // 실시간 시간 업데이트
     function updateTime() {

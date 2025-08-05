@@ -1,40 +1,42 @@
-// js/main.js
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 캐러셀 기능
+    // 캐러셀 요소 선택
     const caWrapper = document.querySelector('.ca-image-wrapper');
-    const caImages = document.querySelectorAll('.ca-image');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
     const paginationDots = document.querySelectorAll('.dot');
+    const quickReservationButtons = document.querySelectorAll('.quick-reservation-button'); 
+    
     let currentIndex = 0;
     let autoSlideInterval;
+    const slides = 3; // 총 슬라이드 페이지 수 (2장씩 총 3페이지)
 
-    // 이미지 표시 함수
-    const showImage = (index) => {
-        caImages.forEach((img, i) => {
-            img.classList.remove('active');
-            paginationDots[i].classList.remove('active');
+    // 슬라이드 페이지를 표시하는 함수
+    const showSlide = (index) => {
+        // 총 3페이지이므로, 100%를 3으로 나눈 값만큼 이동
+        caWrapper.style.transform = `translateX(-${index * (100 / slides)}%)`;
+        
+        // 페이지네이션 점 활성화/비활성화
+        paginationDots.forEach((dot, i) => {
+            dot.classList.remove('active');
         });
-        caImages[index].classList.add('active');
         paginationDots[index].classList.add('active');
     };
 
-    // 다음 이미지로 이동
-    const goToNextImage = () => {
-        currentIndex = (currentIndex + 1) % caImages.length;
-        showImage(currentIndex);
+    // 다음 슬라이드로 이동
+    const goToNextSlide = () => {
+        currentIndex = (currentIndex + 1) % slides;
+        showSlide(currentIndex);
     };
 
-    // 이전 이미지로 이동
-    const goToPrevImage = () => {
-        currentIndex = (currentIndex - 1 + caImages.length) % caImages.length;
-        showImage(currentIndex);
+    // 이전 슬라이드로 이동
+    const goToPrevSlide = () => {
+        currentIndex = (currentIndex - 1 + slides) % slides;
+        showSlide(currentIndex);
     };
 
     // 자동 슬라이드 시작
     const startAutoSlide = () => {
-        autoSlideInterval = setInterval(goToNextImage, 3000); // 3초마다 슬라이드 변경
+        autoSlideInterval = setInterval(goToNextSlide, 3000); // 3초마다 슬라이드 변경
     };
 
     // 자동 슬라이드 정지
@@ -42,21 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(autoSlideInterval);
     };
 
-    // 초기 이미지 표시
-    showImage(currentIndex);
-    startAutoSlide(); // 페이지 로드 시 자동 슬라이드 시작
+    // 초기 슬라이드 표시 및 자동 슬라이드 시작
+    showSlide(currentIndex);
+    startAutoSlide();
 
     // 화살표 클릭 이벤트
     leftArrow.addEventListener('click', () => {
         stopAutoSlide();
-        goToPrevImage();
-        startAutoSlide(); // 수동 조작 후 자동 슬라이드 재시작
+        goToPrevSlide();
+        startAutoSlide();
     });
 
     rightArrow.addEventListener('click', () => {
         stopAutoSlide();
-        goToNextImage();
-        startAutoSlide(); // 수동 조작 후 자동 슬라이드 재시작
+        goToNextSlide();
+        startAutoSlide();
     });
 
     // 페이지네이션 점 클릭 이벤트
@@ -65,12 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
             stopAutoSlide();
             const index = parseInt(e.target.dataset.index);
             currentIndex = index;
-            showImage(currentIndex);
-            startAutoSlide(); // 수동 조작 후 자동 슬라이드 재시작
+            showSlide(currentIndex);
+            startAutoSlide();
         });
     });
 
-    // 마우스 오버 시 자동 슬라이드 정지, 마우스 아웃 시 재시작 (선택 사항)
+    // 마우스 오버 시 자동 슬라이드 정지
     caWrapper.addEventListener('mouseenter', stopAutoSlide);
     caWrapper.addEventListener('mouseleave', startAutoSlide);
 
@@ -83,11 +85,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 빠른 예약 버튼 이벤트
+    quickReservationButtons.forEach(button => {
+        const targetUrl = button.dataset.href;
+        button.addEventListener('click', () => {
+            window.location.href = targetUrl;
+        });
+    });
+
     // 공지사항 "더보기" 버튼 이벤트
     const viewMoreButton = document.querySelector('.view-more-button');
     if (viewMoreButton) {
         viewMoreButton.addEventListener('click', () => {
-            예: window.location.href = '../Qna/notice.html';
+            window.location.href = '../Qna/notice.html';
         });
     }
 });
+
+// 공지사항 모달 함수 (기존 코드 유지)
+function openNotice(event, category, title, date) {
+    event.preventDefault(); // 기본 링크 이동 방지
+    // 모달창을 띄우는 로직 (기존 코드에 따라)
+    console.log(`[${category}] ${title} (${date})`);
+}

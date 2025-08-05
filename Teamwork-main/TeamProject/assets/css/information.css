@@ -1,146 +1,153 @@
 /* information.css */
 
+/*
+  apply_guide.html과 통일된 레이아웃을 위해
+  메인 콘텐츠를 중앙 정렬하고 최대 너비를 설정합니다.
+*/
 .main {
-    width: 74%;
+    max-width: 900px; /* apply_guide와 유사한 너비로 설정 */
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* 묶어놓움 */
+/* 빵 부스러기(breadcrumb) 스타일 */
+.breadcrumb {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* 제목 스타일을 apply_guide.html과 통일 */
+.title {
+    margin-bottom: 30px;
+}
+
+.title .h2 {
+    font-size: 28px;
+    font-weight: bold;
+    border-bottom: 2px solid #fad96b; 
+    padding-bottom: 10px;
+    color: #333;
+}
+
+/*
+  프로필 정보 섹션을 카드 형태로 만듭니다.
+  이미지와 정보 입력란을 포함하는 컨테이너입니다.
+*/
 .gatchi {
     display: flex;
-    width: 100%;
+    gap: 20px; /* 요소 간 간격 추가 */
+    align-items: flex-start; /* 상단 정렬 */
+    background-color: #f8f9fa; /* 배경색 추가 */
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 25px; /* 내부 여백 추가 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
 }
 
-/* 케어메이트 이미지 사진 */
+/* 케어메이트 이미지 사진 컨테이너 */
 .info-placeholder {
-    border: 1px solid rgb(138, 138, 138);
-    border-radius: 6px;
-    width: 400px;
-    height: 400px;
-    margin-right: 10px;
+    width: 250px;
+    height: 250px;
+    flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
+    border-radius: 8px; /* 테두리 둥글게 */
+    overflow: hidden; /* 이미지 밖으로 벗어나는 부분 숨김 */
+    border: 1px solid #ddd;
 }
 
 .img {
-    width: 400px;
-    border-radius: 5px;
+    width: 100%; /* 컨테이너에 맞게 이미지 크기 조절 */
+    height: 100%;
+    object-fit: cover; /* 이미지가 잘리지 않고 컨테이너를 채우도록 */
 }
 
-/* 케어메이트 정보 입력란 */
+/* 케어메이트 정보 텍스트 컨테이너 */
 .name-main {
-    border-radius: 10px;
-    width: 460px;
-}
-
-.name0 {
-    margin-left: 10px;
-}
-
-.name22 {
-    color: #333333;
-    font-weight: 700;
-    font-size: 30px;
-    padding-bottom: 25px;
+    flex-grow: 1; /* 남은 공간을 모두 차지하도록 설정 */
+    padding-left: 10px; /* 기존 HTML의 여백을 유지 */
 }
 
 .name2 {
-    background-color: #f8f8d8;
-    border: 1px solid rgb(138, 138, 138);
-    border-radius: 7px;
-    width: 467px;
-    height: 400px;
-    /* 글씨들을 아래로 내리기 위해 flexbox를 다시 사용합니다. */
-    display: flex-wrap;
-    /* 가로 방향 정렬 */
-    flex-direction: wrap;
-    /* 상단에서부터 시작 */
-    justify-content: flex-start;
-    /* 좌측 정렬 */
-    align-items: flex-start;
-    padding-top: 30px;
-    padding-left: 12px;
-    /* 패딩이 너비에 포함되도록 설정 */
+    background-color: transparent; /* 배경색 투명하게 변경 */
+    border: none; /* 테두리 제거 */
+    width: 100%;
+    height: auto;
+    display: block; /* block 요소로 변경 */
+    padding: 0;
     box-sizing: border-box;
 }
 
+.name22 {
+    color: #fad96b; /* 파란색으로 변경 */
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e9ecef; /* 제목과 정보 사이 구분선 */
+}
+
 .name2 span {
-    display: inline-block;
+    display: block; /* 각 정보를 새로운 줄에 표시 */
     margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .name2 strong {
-    display: inline-block;
-    margin-bottom: 10px;
-    color: #333333;
+    font-weight: 600;
+    color: #333;
+    margin-right: 5px;
 }
 
-
-.info-line {
-    margin-bottom: 12px;
-}
-
+/* '현재 상태' 옆 초록색 점 */
 .green {
-    background-color: green;
+    background-color: #28a745;
     border-radius: 50%;
     width: 10px;
     height: 10px;
     display: inline-block;
     margin-left: 5px;
-    vertical-align:text-top;
+    vertical-align: middle;
 }
 
-.h3{
-    border-bottom : 2px solid #eee;
-    padding-bottom: 10px;
-    font-size: 2em;
+/* 불필요한 h3 클래스 제거 */
+.h3 {
+    display: none;
 }
 
-/* 도우미 신청하기 버튼 만들기 */
+/* 도우미 신청하기 버튼 컨테이너 */
 .button-main {
     margin-top: 30px;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .button {
-    /* 모양 만들기 */
-    background-color: #333333;
-    border: 1px solid #333333;
+    /* 기존 버튼 스타일 유지 및 개선 */
+    background-color: #fad96b;
+    border: 1px solid #fad96b;
     border-radius: 30px;
-
-    /* 모양 크기 조절 */
     width: 200px;
     height: 50px;
-
-    /* 버튼 글씨 꾸미기 */
-    color: white;
-    text-align: center;
-    display: flex;
-    /* 가로 중앙 */
+    color: #333333;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-flex; /* flex로 변경하여 내부 텍스트 중앙 정렬 */
     justify-content: center;
-    /* 세로 중앙 */
     align-items: center;
     cursor: pointer;
-
-    /* 애니메이션 효과를 위한 transition 추가 */
-    /* transition 오타 수정 */
-    transition: transform 0.1s ease-in-out, background-color 0.2s ease;
-    /* box-shadow 오타 수정 */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 마우스 호버 효과 */
 .button:hover {
-    background-color: #555555;
+    background-color: #e6c762;
+    color: black;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* 클릭 시 딸깍 느낌 효과
-.button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-} */
-
-/* 모달 창의 전체 배경. 초기에는 숨김 처리 */
+/* 모달 창의 전체 배경. JavaScript에서 'show' 클래스로 제어 */
 .modal {
-    display: none; /* 이전에는 flex와 중복되던 이 부분을, 이제 JavaScript와 연동해서 사용합니다. */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -149,13 +156,11 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-    
-    /* 기존 flex 속성은 이 클래스에 남겨둡니다. */
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
 }
 
-/* JavaScript에서 'show' 클래스가 추가되면 모달이 보이게 하는 스타일 */
 .modal.show {
     display: flex;
 }
@@ -163,18 +168,17 @@
 /* 모달 창 내용 컨테이너 */
 .modal-content {
     background-color: #ffffff;
-    padding: 0;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    width: 40%;
+    width: 90%;
+    max-width: 450px;
     text-align: center;
     border: 1px solid #ddd;
-    /* 사진과 비슷한 너비 */
-    max-width: 500px;
 }
 
-/* 닫기 버튼 (X 아이콘) */
+/* 닫기 버튼 */
 .close-modal {
     color: #aaa;
     position: absolute;
@@ -192,11 +196,10 @@
 
 /* 모달 메시지 텍스트 */
 .modal-content p {
-    padding: 50px 20px 20px;
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
-    margin: 0;
+    margin: 20px 0;
 }
 
 /* 모달 버튼 컨테이너 */
@@ -204,51 +207,72 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    padding-top: 30px;
-    padding-bottom: 40px;
-}
-
-/* 모달 버튼 공통 스타일 */
-.modal-button1 {
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    color: #333;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    width: 200px;
-    height: 50px;
-}
-
-.modal-button:hover {
-    background-color: #eee;
+    margin-top: 30px;
 }
 
 /* 모달 버튼 공통 스타일 */
 .modal-button {
     padding: 10px 20px;
     border-radius: 30px;
-    border: 1px solid #333;
-    background-color: #fff;
-    color: #333;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    width: 200px;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    width: 180px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 특정 버튼 스타일 (선택사항) */
+/* '메인으로 이동' 버튼 스타일 */
 #goToMainBtn {
-    background-color: #333;
-    color: white;
-    border: 1px solid #333;
+    background-color: #fad96b;
+    color: #333333;
+    border: 1px solid #fad96b;
 }
 
 #goToMainBtn:hover {
-    background-color: #555;
+    background-color: #e6c762;
+    color: black;
+}
+
+/* '신청 현황 보러가기' 버튼 스타일 */
+#goToStatusBtn {
+    background-color: #fad96b;
+    color: #333333;
+    border: 1px solid #fad96b;
+}
+
+#goToStatusBtn:hover {
+    background-color: #e6c762;
+    color: black;
+}
+
+/* 미디어 쿼리: 작은 화면에서는 세로로 정렬 */
+@media (max-width: 768px) {
+    .gatchi {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .info-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+    .main {
+        padding: 10px;
+    }
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+    .modal-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .modal-button {
+        width: 100%;
+    }
 }

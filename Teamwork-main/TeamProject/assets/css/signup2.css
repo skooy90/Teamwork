@@ -136,6 +136,12 @@ h2 {
     border-radius: 50%;
     background: white;
 }
+.ps-text {
+    margin: 10px 4px 0;
+    font-size: 13px;
+    line-height: 18px;
+    color:#55555580
+}
 
 /* 반응형 조정 */
 @media (max-width: 768px) {

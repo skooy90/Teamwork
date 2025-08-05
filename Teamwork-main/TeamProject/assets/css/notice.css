@@ -44,8 +44,8 @@
 }
 
 .search-button {
-    background-color: #007bff;
-    color: white;
+    background-color: #fad96b;
+    color: #333333;
     padding: 8px 15px;
     border: none;
     border-radius: 4px;
@@ -55,7 +55,8 @@
 }
 
 .search-button:hover {
-    background-color: #0056b3;
+    background-color: #e6c762;
+    color: black;
 }
 
 /* 게시판 테이블 */
@@ -150,8 +151,8 @@
 
 /* '공지' 라벨 스타일 */
 .notice-label { /* JavaScript에서 추가할 클래스 이름 */
-    background-color: #e6f7ff; /* 공지 배경색 */
-    color: #007bff; /* 공지 텍스트 색상 */
+    background-color: #fcf8e5; /* 공지 배경색 */
+    color: #e6c762; /* 공지 텍스트 색상 */
     font-weight: bold;
     border-radius: 3px;
     padding: 5px 8px;
@@ -191,14 +192,14 @@
 }
 
 .page-link.active {
-    background-color: #007bff;
+    background-color: #ffce2d;
     color: white;
-    border-color: #007bff;
+    border-color: #ffce2d;
     font-weight: bold;
 }
 
 .page-link.active:hover {
-    background-color: #007bff; /* 활성화된 상태에서는 호버 시 색상 유지 */
+    background-color: #ffce2d; /* 활성화된 상태에서는 호버 시 색상 유지 */
     color: white;
 }
 

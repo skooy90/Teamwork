@@ -46,18 +46,18 @@
 
 /* 활성화된 버튼 스타일 (스토리보드의 어두운 회색) */
 .guide-button.active-button {
-    background-color: #666; /* 활성 버튼 배경색 (어두운 회색) */
-    color: white; /* 활성 버튼 텍스트 색상 */
+    background-color: #ebc447; 
+    color: black; /* 활성 버튼 텍스트 색상 */
     cursor: default; /* 활성화된 버튼은 클릭 불가 표시 */
 }
 
 /* 활성화되지 않은 버튼의 기본 및 호버 스타일 (밝은 회색) */
 .guide-button:not(.active-button) {
-    background-color: #e0e0e0; /* 비활성 버튼의 기본 배경색 (밝은 회색) */
-    color: #333; /* 비활성 버튼의 텍스트 색상 */
+    background-color: #f7dc85; /* 기본 배경색 */
+    color: #333333;
 }
 
 .guide-button:not(.active-button):hover {
-    background-color: #d0d0d0; /* 비활성 버튼 호버 시 약간 더 어두운 회색 */
-    color: #333; /* 텍스트 색상 유지 */
+   background-color: #ebc447; 
+    color: black;
 }

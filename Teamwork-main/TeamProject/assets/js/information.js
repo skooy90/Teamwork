@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // '신청 현황 보러가기' 버튼이 있을 경우, 클릭 이벤트를 추가합니다.
     if (goToStatusBtn) {
         goToStatusBtn.addEventListener('click', () => {
-            window.location.href = '신청현황페이지_경로.html';
+            window.location.href = '../Apply/live.html';
         });
     }
 });

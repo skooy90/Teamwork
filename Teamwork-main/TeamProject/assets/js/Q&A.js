@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             row.innerHTML = `
                 <td class="col-id">${item.id}</td>
                 <td class="col-title"><a href="qna_detail.html?id=${item.id}">${item.title}</a></td>
-                <td class="col-attachment">${item.attachment ? '<img src="https://via.placeholder.com/16x16?text=📄" alt="첨부파일" style="vertical-align: middle;">' : ''}</td>
+                <td class="col-attachment"> ${item.attachment ? '📄' : ''}</td>
                 <td class="col-writer">${item.writer}</td>
                 <td class="col-date">${item.date}</td>
                 <td class="col-comments">${item.comments}</td>

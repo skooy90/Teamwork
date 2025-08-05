@@ -137,12 +137,12 @@ body {
 }
 
 .address-confirm-btn.confirmed {
-    background-color: #28a745; /* 확인됨 상태일 때 초록색 */
+    background-color: #e6c762; /* 확인됨 상태일 때 초록색 */
     cursor: default; /* 클릭 불가 커서 */
 }
 
 .address-confirm-btn.confirmed:hover {
-    background-color: #28a745; /* 호버 시에도 색상 유지 */
+    background-color: #e6c762; /* 호버 시에도 색상 유지 */
 }
 
 
@@ -168,7 +168,7 @@ body {
 }
 
 .terms-group label a {
-    color: #007bff;
+    color: #ff0000;
     text-decoration: none;
     font-weight: bold;
 }
@@ -197,8 +197,8 @@ body {
 }
 
 .register-btn {
-    background-color: #007bff; /* 파란색 배경 */
-    color: white;
+    background-color: #fad96b; /* 파란색 배경 */
+    color: #333333;
     padding: 12px 30px;
     font-size: 1.1em;
     border: none;
@@ -209,7 +209,8 @@ body {
 }
 
 .register-btn:hover {
-    background-color: #0056b3;
+    background-color: #e6c762;
+    color: black;
 }
 
 

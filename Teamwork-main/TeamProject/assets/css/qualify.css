@@ -129,18 +129,20 @@
         }
 
         .apply-certification-btn {
-            background-color: #666;
-            color: white;
+            background-color: #fad96b;
+            color: #333333;
             padding: 12px 30px;
             font-size: 1.1em;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-decoration: none;
         }
 
         .apply-certification-btn:hover {
-            background-color: #555;
+            background-color: #e6c762;
+            color: black;
         }
 
         /* qualify_guide.html 및 qualify_contact.html 에 사용되는 특정 스타일 */
@@ -574,5 +576,76 @@
         }
 
         .modal-button:hover {
+            background-color: #555;
+        }
+
+        /* 새로 추가된 스타일 */
+        .certification-form-section {
+            background-color: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .certification-form-section form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-group {
+            flex: 1 1 calc(50% - 10px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            flex: 1 1 100%;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .form-group select,
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #555;
+        }
+
+        .submit-button-container {
+            flex: 1 1 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .submit-button-container .apply-certification-btn {
+            background-color: #666;
+            color: white;
+            padding: 12px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button-container .apply-certification-btn:hover {
             background-color: #555;
         }

@@ -101,7 +101,7 @@
 
                     if (notice.attachment) {
                         noticeDetailAttachment.innerHTML = `
-                            <img src="https://via.placeholder.com/16x16?text=📄" alt="첨부파일 아이콘" style="vertical-align: middle;">
+                            <img style="vertical-align: middle;">📄
                             <span>첨부파일: ${notice.title.split(']')[0] || '파일'} (클릭 시 다운로드)</span>
                         `;
                         // 실제 다운로드 기능은 서버가 필요하므로 더미 링크로 표시

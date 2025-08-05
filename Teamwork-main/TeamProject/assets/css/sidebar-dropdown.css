@@ -7,7 +7,7 @@
 }
 
 .sidebar-nav .dropdown h3 {
-    background-color: #eee;
+    background-color: #fff8e1;
     padding: 10px 15px;
     cursor: pointer;
     margin: 0;
@@ -32,7 +32,7 @@
 
 /* 드롭다운이 활성(열림) 상태일 때 제목 배경색 변경 */
 .sidebar-nav .dropdown.active h3 {
-    background-color: #ddd;
+    background-color: #ffce2d;
 }
 
 /* 하위 메뉴 (ul) 기본적으로 숨김 */

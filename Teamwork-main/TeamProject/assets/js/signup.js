@@ -32,7 +32,7 @@
             document.querySelectorAll('.view-details-btn').forEach(button => {
                 button.addEventListener('click', function() {
                     const agreementText = this.previousElementSibling.querySelector('.agreement-text').textContent;
-                    alert(`'${agreementText}' 약관 상세 내용을 표시합니다. (실제 내용 없음)`); // 임시 알림
+                    alert(`'${agreementText}' 약관 상세 내용을 표시합니다.`); // 임시 알림
                     // 실제 구현 시 모달을 열거나 새 페이지로 이동하여 약관 내용을 보여줍니다.
                 });
             });
@@ -40,3 +40,5 @@
             // 초기 로드 시 '다음' 버튼 상태 설정
             checkAllRequiredAgreed();
         });
+
+        

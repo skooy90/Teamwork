@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalImage = document.getElementById('modalImage');
     const closeButton = document.querySelector('.modal .close-button');
     const applyHelperBtn = document.getElementById('applyHelperBtn');
+    const information = document.getElementById('information');
 
     const sidebarLinks = document.querySelectorAll('.caremate-sidebar-link');
     const tabButtons = document.querySelectorAll('.tab-button'); // 탭 버튼 요소 가져오기
@@ -68,6 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
             resetModal();
         }, 3000); 
     });
+    information.addEventListener('click', function() {
+        window.location.href = 'information.html';
+    });
+
 
     // ==============================================
     // 사이드바 및 탭 섹션 전환 로직

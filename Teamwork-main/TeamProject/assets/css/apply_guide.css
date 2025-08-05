@@ -1,133 +1,105 @@
-/* 가이드 섹션 스타일 */
+/* apply_guide.css */
+
+/*
+  apply.html과 유사한 레이아웃을 위해
+  전체 컨테이너를 중앙 정렬하고 최대 너비를 설정합니다.
+*/
+.container {
+    max-width: 900px; /* apply.html 콘텐츠 영역과 유사한 너비로 설정 */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* 콘텐츠 배경색 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.content {
+    /* 기존 content 스타일에서 변경할 부분 */
+    padding: 0; /* padding을 초기화하고, 내부 요소에서 여백을 처리 */
+}
+
+/* breadcrumb 스타일은 header.css에 정의되어 있을 것으로 가정합니다. */
+.breadcrumb {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/*
+  제목 스타일을 apply.html과 유사하게 변경합니다.
+*/
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #fad96b;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+/* 각 가이드 섹션을 박스 형태로 시각적으로 구분 */
 .guide-section {
-    margin-bottom: 40px;
+    margin-bottom: 5dvb;
+    padding: 25px;
+    background-color: #fcf8e5;
 }
 
 .guide-section h3 {
-    font-size: 1.5em;
-    color: #34495e;
-    margin-bottom: 10px;
-    border-left: 4px solid #3498db;
-    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 15px;
 }
 
 .guide-section p {
-    font-size: 1em;
-    color: #555;
+    font-size: 16px;
     line-height: 1.6;
-    margin-left: 15px;
+    color: #333;
+    margin-top: 10px;
 }
 
-.guide-image {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.guide-section p strong {
+    color: #fad96b;
 }
 
 .final-step {
-    font-weight: bold;
-    color: #2c3e50;
-    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+    margin-top: 25px;
     padding: 15px;
-    background-color: #f0f4f7;
-    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    background-color: #fff3cd;
+    border-radius: 4px;
 }
 
-/* '다음' 버튼 컨테이너 */
+/* '도우미 신청 바로가기' 버튼 스타일 */
 .button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    text-align: center;
+    margin-top: 40px;
 }
 
-/* '다음' 버튼 스타일 */
 .next-button {
-    padding: 12px 30px;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #fff;
-    background-color: #3498db;
+    background-color: #fad96b;
+    color: #333333;
     border: none;
-    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
+    width: 250px; /* 버튼 너비 고정 */
 }
 
 .next-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
+    background-color: #e6c762;
+            color: black;
 }
 
-/* ================================================= */
-/* 모바일 반응형 디자인 시작 */
-/* ================================================= */
-
-/* 태블릿 및 모바일 기기 (화면 너비 768px 이하) */
-@media (max-width: 768px) {
-    /* 메인 콘텐츠 컨테이너의 좌우 여백을 줄여서 화면을 가득 채우도록 합니다. */
-    .container {
-        margin: 10px;
-        padding: 10px;
-        box-shadow: none; /* 모바일에서는 그림자를 제거하여 깔끔하게 만듭니다. */
-    }
-
-    /* 콘텐츠 영역의 패딩을 조정합니다. */
-    .content {
-        padding: 10px;
-    }
-
-    /* 페이지 제목의 글꼴 크기를 줄입니다. */
-    .content h2 {
-        font-size: 1.6em;
-        padding-bottom: 5px;
-    }
-
-    /* 가이드 섹션의 제목 글꼴 크기와 간격을 조정합니다. */
-    .guide-section h3 {
-        font-size: 1.3em;
-        padding-left: 8px;
-        border-left-width: 3px;
-        margin-bottom: 8px;
-    }
-    
-    /* 가이드 섹션의 본문 글꼴 크기와 간격을 조정합니다. */
-    .guide-section p {
-        font-size: 0.95em;
-        margin-left: 10px;
-        line-height: 1.5;
-    }
-
-    /* 최종 단계 강조 텍스트의 패딩을 줄입니다. */
-    .final-step {
-        padding: 12px;
-        font-size: 0.95em;
-    }
-
-    /* 버튼의 패딩과 글꼴 크기를 조정합니다. */
-    .next-button {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-}
-
-/* 더 작은 모바일 화면 (화면 너비 480px 이하) */
-@media (max-width: 480px) {
-    /* 콘텐츠 제목을 더 작게 만듭니다. */
-    .content h2 {
-        font-size: 1.4em;
-    }
-
-    /* 가이드 섹션 제목을 더 작게 만듭니다. */
-    .guide-section h3 {
-        font-size: 1.2em;
-    }
-
-    /* 버튼의 패딩을 더 줄여서 작은 화면에 맞춥니다. */
-    .next-button {
-        padding: 8px 16px;
-        font-size: 0.9em;
-    }
+/* 채팅봇 버튼 위치 조정을 위한 스타일 */
+#Chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
